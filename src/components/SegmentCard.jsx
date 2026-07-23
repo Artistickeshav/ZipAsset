@@ -1,6 +1,6 @@
 import { formatRs } from "../utils/format";
 
-function SegmentCard({ segment }) {
+function SegmentCard({ segment, isSelected, onSelect }) {
   const riskClass =
     segment.riskLevel === "High"
       ? "bg-rose-100 text-rose-700 border-rose-200"
@@ -66,8 +66,12 @@ function SegmentCard({ segment }) {
             </div>
           </div>
 
-          <button className="primary-button mt-5 w-full justify-center">
-            View &amp; Invest
+          <button
+            type="button"
+            onClick={() => onSelect(segment.id)}
+            className={`mt-5 w-full justify-center ${isSelected ? "secondary-button" : "primary-button"}`}
+          >
+            {isSelected ? "Open Opportunity Page" : "View Opportunity"}
           </button>
         </div>
       </div>

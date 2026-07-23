@@ -1,8 +1,10 @@
+import BrandLogo from "./BrandLogo";
+
 function Footer() {
   const socialLinks = [
     {
       label: "Instagram",
-      href: "https://www.instagram.com/",
+      href: "https://www.instagram.com/zipboltinnovations/",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="1.8" />
@@ -13,7 +15,7 @@ function Footer() {
     },
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/",
+      href: "https://www.linkedin.com/company/zipbolt/posts/?feedView=all",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M7.2 9.3V18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -24,22 +26,12 @@ function Footer() {
       ),
     },
     {
-      label: "X",
-      href: "https://x.com/",
+      label: "Email",
+      href: "mailto:info@zip-bolt.com",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 5.5L18 18.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M18 5.5L6 18.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
-    },
-    {
-      label: "YouTube",
-      href: "https://www.youtube.com/",
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M20 8.6C19.8 7.6 19 6.8 18 6.6C16.5 6.2 12 6.2 12 6.2C12 6.2 7.5 6.2 6 6.6C5 6.8 4.2 7.6 4 8.6C3.6 10.2 3.6 12 3.6 12C3.6 12 3.6 13.8 4 15.4C4.2 16.4 5 17.2 6 17.4C7.5 17.8 12 17.8 12 17.8C12 17.8 16.5 17.8 18 17.4C19 17.2 19.8 16.4 20 15.4C20.4 13.8 20.4 12 20.4 12C20.4 12 20.4 10.2 20 8.6Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-          <path d="M10.3 14.7V9.3L14.9 12L10.3 14.7Z" fill="currentColor" />
+          <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" strokeWidth="1.8" />
+          <path d="M4 6L12 13L20 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     },
@@ -48,16 +40,11 @@ function Footer() {
   return (
     <footer className="mt-12 border-t border-white/10 bg-[#0a1738] text-white">
       <div className="mx-auto w-[min(1180px,calc(100%-22px))] py-12 md:w-[min(1180px,calc(100%-32px))]">
-        <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr_0.75fr_0.9fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.7fr_0.7fr_0.8fr_1fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-[18px] bg-gradient-to-br from-cyan-400 via-teal-300 to-emerald-300 text-sm font-black text-slate-950 shadow-[0_12px_24px_rgba(34,211,238,0.24)]">
-                ZI
-              </span>
-              <div>
-                <div className="text-lg font-black uppercase tracking-[0.14em] text-white">
-                  ZipInvest
-                </div>
+            <div className="flex items-center gap-4">
+              <BrandLogo imgClassName="h-11 sm:h-12 md:h-14 drop-shadow-[0_10px_22px_rgba(34,211,238,0.14)]" />
+              <div className="min-w-0">
                 <div className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-200/75">
                   A Product Of Zipbolt Innovations Pvt Ltd
                 </div>
@@ -72,24 +59,10 @@ function Footer() {
                 GSTIN : 06AABCZ8004D1ZM
               </p>
               <p>UG-006, Ground Floor</p>
-              <p>MGF Metropolis Mall, Mehrauli – Gurgaon Road</p>
+              <p>MGF Metropolis Mall, Mehrauli - Gurgaon Road</p>
               <p>Gurugram, Haryana 122002, India</p>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="#marketplace"
-                className="inline-flex items-center rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/12"
-              >
-                Explore marketplace
-              </a>
-              <a
-                href="#calculator"
-                className="inline-flex items-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:brightness-105"
-              >
-                Open simulator
-              </a>
-            </div>
           </div>
 
           <div>
@@ -139,8 +112,8 @@ function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
+                    target={social.label === "Email" ? undefined : "_blank"}
+                    rel={social.label === "Email" ? undefined : "noreferrer"}
                     aria-label={social.label}
                     title={social.label}
                     className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-white/8 text-blue-100/85 transition hover:-translate-y-0.5 hover:bg-white/12 hover:text-white"
@@ -149,18 +122,33 @@ function Footer() {
                   </a>
                 ))}
               </div>
-              <a className="transition hover:text-white" href="#top">
-                Schedule a walkthrough
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-black uppercase tracking-[0.18em] text-white">Legal</h4>
+            <div className="mt-4 grid gap-3 text-sm text-blue-100/75">
+              <a className="transition hover:text-white" href="/legal/terms-of-use.html" target="_blank" rel="noreferrer">
+                Terms of Use
               </a>
-              <a className="transition hover:text-white" href="#top">
-                Terms & privacy
+              <a className="transition hover:text-white" href="/legal/privacy-policy.html" target="_blank" rel="noreferrer">
+                Privacy Policy
+              </a>
+              <a className="transition hover:text-white" href="/legal/risk-disclosure.html" target="_blank" rel="noreferrer">
+                Risk Disclosure
+              </a>
+              <a className="transition hover:text-white" href="/legal/kyc-aml-policy.html" target="_blank" rel="noreferrer">
+                KYC / AML Policy
+              </a>
+              <a className="transition hover:text-white" href="/legal/investor-eligibility.html" target="_blank" rel="noreferrer">
+                Investor Eligibility
               </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-blue-100/60">
-          <p>© 2026 ZipInvest, a product of Zipbolt Innovations Pvt Ltd.</p>
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-blue-100/60">
+          <p>&copy; 2026 ZipInvest, a product of Zipbolt Innovations Pvt Ltd.</p>
           <div className="flex flex-wrap gap-4">
             <a className="transition hover:text-white" href="#top">
               Back to top
