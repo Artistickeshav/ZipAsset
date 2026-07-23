@@ -3,13 +3,25 @@ import Header from "./components/Header";
 import InvestmentCalculator from "./components/InvestmentCalculator";
 import SegmentsGrid from "./components/SegmentsGrid";
 import Footer from "./components/Footer";
+import ChargerOpportunityPage from "./components/ChargerOpportunityPage";
 import { marketStats, marketplaceHighlights, segments, steps } from "./data/content";
 
+const getRouteFromHash = () => {
+  const hash = window.location.hash.replace(/^#/, "");
+
+  if (hash.startsWith("charger/")) {
+    return { page: "charger", segmentId: hash.slice("charger/".length), anchor: null };
+  }
+
+  return { page: "home", segmentId: null, anchor: hash || null };
+};
+
 function App() {
-  const [selectedSegmentId, setSelectedSegmentId] = useState("charger-120kw");
+  const [selectedSegmentId, setSelectedSegmentId] = useState("charger-60kw");
   const [investmentAmount, setInvestmentAmount] = useState(15000);
+  const [route, setRoute] = useState(() => getRouteFromHash());
   const [spotlightIndex, setSpotlightIndex] = useState(
-    () => segments.findIndex((segment) => segment.id === "charger-120kw") ?? 0,
+    () => segments.findIndex((segment) => segment.id === "charger-60kw") ?? 0,
   );
   const [isSpotlightPaused, setIsSpotlightPaused] = useState(false);
 
@@ -44,8 +56,57 @@ function App() {
     return () => clearInterval(interval);
   }, [isSpotlightPaused]);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      setRoute(getRouteFromHash());
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (route.page !== "home" || !route.anchor) {
+      return undefined;
+    }
+
+    const scrollToAnchor = () => {
+      if (route.anchor === "top") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
+      const target = document.getElementById(route.anchor);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    const timeoutId = window.setTimeout(scrollToAnchor, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, [route]);
+
   const annualIncome = Math.round(investmentAmount * (selectedSegment.yieldRate / 100));
   const monthlyIncome = Math.round(annualIncome / 12);
+
+  const handleOpenOpportunity = (segmentId) => {
+    setSelectedSegmentId(segmentId);
+    window.location.hash = `charger/${segmentId}`;
+  };
+
+  const handleBackToMarketplace = () => {
+    window.location.hash = "marketplace";
+  };
+
+  const handleOpenSimulator = (segmentId) => {
+    setSelectedSegmentId(segmentId);
+    window.location.hash = "calculator";
+  };
+
+  const routeSegment = route.page === "charger"
+    ? segments.find((segment) => segment.id === route.segmentId) ?? selectedSegment
+    : null;
 
   return (
     <div className="app-shell text-slate-900">
@@ -55,6 +116,13 @@ function App() {
 
       <Header />
 
+      {route.page === "charger" && routeSegment ? (
+        <ChargerOpportunityPage
+          segment={routeSegment}
+          onBackToMarketplace={handleBackToMarketplace}
+          onOpenSimulator={() => handleOpenSimulator(routeSegment.id)}
+        />
+      ) : (
       <main id="top" className="pb-12 pt-6 sm:pt-8">
         <div className="mx-auto w-[min(1480px,calc(100%-22px))] md:w-[min(1480px,calc(100%-32px))]">
           <section className="hero-panel hero-panel-zip space-y-8 lg:p-8">
@@ -65,7 +133,7 @@ function App() {
                 </div>
 
                 <div className="space-y-4">
-                  <h1 className="hero-title max-w-4xl text-5xl font-extrabold uppercase leading-[0.88] tracking-[-0.07em] text-slate-950 sm:text-6xl lg:text-[5.8rem]">
+                  <h1 className="hero-title max-w-4xl text-5xl font-bold uppercase leading-[0.94] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-[5.5rem]">
                     <span className="hero-title-line">Own Revenue</span>
                     <span className="hero-title-line">Generating EV</span>
                     <span className="hero-title-line">Charging Assets</span>
@@ -208,31 +276,6 @@ function App() {
             </div>
           </section>
 
-          <section className="mt-8 grid gap-5 lg:grid-cols-3">
-            {segments.slice(0, 3).map((segment, index) => (
-              <article
-                key={segment.id}
-                className="feature-card animate-rise"
-                style={{ animationDelay: `${120 + index * 120}ms` }}
-              >
-                <div className="feature-card-accent" />
-                <div className="relative">
-                  <div className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-700">
-                    {segment.power}
-                  </div>
-                  <h3 className="mt-4 text-2xl font-black tracking-[-0.04em] text-slate-950">
-                    {segment.name}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{segment.description}</p>
-                  <div className="mt-6 grid gap-3 text-sm text-slate-700">
-                    <div className="metric-tile">Yield: {segment.yieldRate}%</div>
-                    <div className="metric-tile">Ideal for {segment.site}</div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </section>
-
           <section id="marketplace" className="mt-8">
             <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
               <div>
@@ -244,7 +287,11 @@ function App() {
                 </h2>
               </div>
             </div>
-            <SegmentsGrid segments={segments} />
+            <SegmentsGrid
+              segments={segments}
+              selectedSegmentId={selectedSegmentId}
+              onSelectSegment={handleOpenOpportunity}
+            />
           </section>
 
           <section className="mt-10 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
@@ -296,20 +343,20 @@ function App() {
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {[
                   {
-                    title: "Urban retail",
-                    body: "High visibility sites with dependable daily demand and premium dwell times.",
+                    title: "Residential and workplace",
+                    body: "Long-dwell charging where daily convenience and repeat usage support dependable base demand.",
                   },
                   {
-                    title: "Fleet depots",
-                    body: "Reliable charging for buses, logistics vehicles and regional fleets.",
+                    title: "Destination charging",
+                    body: "Hotels, offices and mixed-use destinations where parked vehicles can charge over several hours.",
+                  },
+                  {
+                    title: "Commercial fast charging",
+                    body: "Retail and light-fleet sites where DC fast chargers improve turnover and site-level revenue potential.",
                   },
                   {
                     title: "Highway corridors",
-                    body: "Premium travel locations where ultra-fast chargers support high throughput.",
-                  },
-                  {
-                    title: "Future-ready",
-                    body: "Infrastructure positioned for rising EV adoption and network expansion.",
+                    body: "Premium travel locations where high-power fast chargers and ultra-fast chargers support throughput.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="metric-tile p-5">
@@ -333,6 +380,7 @@ function App() {
           </section>
         </div>
       </main>
+      )}
 
       <Footer />
     </div>
