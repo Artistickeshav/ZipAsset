@@ -1,3 +1,5 @@
+import charger6kwAcImage from "../assets/charger-6kw-ac.png";
+import charger12kwAcImage from "../assets/charger-12kw-ac.png";
 import charger30kwImage from "../assets/charger-30kw.png";
 import charger60kwImage from "../assets/charger-60kw.png";
 import charger120kwImage from "../assets/charger-120kw.png";
@@ -8,15 +10,15 @@ import charger350kwImage from "../assets/charger-350kw.png";
 export const pageTabs = ["Marketplace", "Charger Classes", "Returns", "Impact"];
 
 export const marketStats = [
-  { label: "Power range", value: "30 kW - 350 kW" },
-  { label: "Preferred sites", value: "Retail • Fleet • Highway" },
-  { label: "Investor entry", value: "Rs 1.5L - Rs 15L+" },
+  { label: "Power range", value: "6 kW - 350 kW" },
+  { label: "Preferred sites", value: "Retail - Fleet - Highway" },
+  { label: "Investor entry", value: "Rs 1.5K - Rs 15L+" },
 ];
 
 export const marketplaceHighlights = [
   "High-utilization charging sites in urban corridors, logistics parks and travel hubs.",
   "Asset-backed exposure to premium charging hardware, software and energy management.",
-  "Flexible participation across compact chargers, premium fast chargers and flagship ultra-fast stations.",
+  "Flexible participation across AC chargers, compact fast chargers and flagship ultra-fast stations.",
 ];
 
 export const steps = [
@@ -26,6 +28,48 @@ export const steps = [
 ];
 
 export const segments = [
+  {
+    id: "charger-6kw-ac",
+    name: "6 kW AC Charger",
+    power: "6 kW",
+    site: "Homes, apartment parking and workplace bays",
+    useCase: "Overnight AC charging",
+    description: "A compact AC charger built for long-dwell parking where vehicles can charge gradually over several hours with a simpler electrical setup.",
+    features: ["Easy wall-mount installation", "Ideal for overnight parking", "Low infrastructure load"],
+    risk: "Low Risk",
+    riskLevel: "Low",
+    yieldRate: 9.5,
+    lockDays: 45,
+    minAmount: 1500,
+    maxAmount: 8000,
+    image: charger6kwAcImage,
+    riskDrivers: [
+      "Residential and workplace usage can vary with occupancy and EV adoption.",
+      "Lower power output means revenue depends on long parking durations rather than fast session turnover.",
+      "Host-site decisions can influence installation timing and charger availability.",
+    ],
+  },
+  {
+    id: "charger-12kw-ac",
+    name: "12 kW AC Charger",
+    power: "12 kW",
+    site: "Hotels, offices and premium destination parking",
+    useCase: "Destination AC charging",
+    description: "A higher-capacity AC charger suited to destination locations where drivers stay for multiple hours and operators want stronger daily throughput than entry AC setups.",
+    features: ["Balanced AC power level", "Good fit for destination parking", "Lower capex than DC fast charging"],
+    risk: "Low Risk",
+    riskLevel: "Low",
+    yieldRate: 10.5,
+    lockDays: 60,
+    minAmount: 3000,
+    maxAmount: 12000,
+    image: charger12kwAcImage,
+    riskDrivers: [
+      "Destination charging demand depends on parking dwell time and host-property occupancy.",
+      "Moderate charging speed may be less attractive where users expect quick top-ups.",
+      "Operating upside is tied to repeat site visits rather than highway-scale traffic.",
+    ],
+  },
   {
     id: "charger-30kw",
     name: "30 kW Urban Fast Charger",
@@ -41,6 +85,11 @@ export const segments = [
     minAmount: 2500,
     maxAmount: 15000,
     image: charger30kwImage,
+    riskDrivers: [
+      "Urban utilization can shift with parking access, local traffic and nearby charger competition.",
+      "Smaller DC sites rely on repeat local demand rather than large fleet contracts.",
+      "Power availability and landlord approvals can affect deployment speed.",
+    ],
   },
   {
     id: "charger-60kw",
@@ -57,6 +106,11 @@ export const segments = [
     minAmount: 8000,
     maxAmount: 30000,
     image: charger60kwImage,
+    riskDrivers: [
+      "Retail demand can fluctuate with footfall, seasonality and host-site merchandising.",
+      "Session turnover depends on uptime and customer dwell behavior.",
+      "Commercial landlords may impose stricter operating and branding requirements.",
+    ],
   },
   {
     id: "charger-120kw",
@@ -73,6 +127,11 @@ export const segments = [
     minAmount: 15000,
     maxAmount: 50000,
     image: charger120kwImage,
+    riskDrivers: [
+      "Highway volumes can change with route demand, seasonality and nearby competition.",
+      "Grid readiness and maintenance response are critical to uptime.",
+      "Long-route charging behavior may shift as vehicle ranges improve.",
+    ],
   },
   {
     id: "charger-180kw",
@@ -89,6 +148,11 @@ export const segments = [
     minAmount: 25000,
     maxAmount: 85000,
     image: charger180kwImage,
+    riskDrivers: [
+      "High-throughput sites are more exposed to uptime issues and maintenance delays.",
+      "Demand concentration at travel hubs can create sharper peak and off-peak swings.",
+      "Energy costs and power management matter more at this utilization level.",
+    ],
   },
   {
     id: "charger-240kw",
@@ -105,6 +169,11 @@ export const segments = [
     minAmount: 40000,
     maxAmount: 150000,
     image: charger240kwImage,
+    riskDrivers: [
+      "Flagship deployments require strong host partnerships and consistent high-volume traffic.",
+      "Larger ticket sizes increase concentration risk for smaller investors.",
+      "Project performance is more sensitive to utilization assumptions and site execution quality.",
+    ],
   },
   {
     id: "charger-350kw",
@@ -121,5 +190,10 @@ export const segments = [
     minAmount: 60000,
     maxAmount: 220000,
     image: charger350kwImage,
+    riskDrivers: [
+      "Next-generation sites depend on future EV adoption and premium corridor demand.",
+      "Ultra-high-power infrastructure carries heavier capex and maintenance complexity.",
+      "Returns are more sensitive to ramp-up timing and long-term utilization assumptions.",
+    ],
   },
 ];

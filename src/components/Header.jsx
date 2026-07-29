@@ -1,30 +1,63 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { segments } from "../data/content";
 import BrandLogo from "./BrandLogo";
+
+const navItems = [
+  { label: "Home", href: "#top" },
+  { label: "Investor Deck", href: "#investordeck" },
+  { label: "Contact", href: "#contact" },
+  { label: "About Us", href: "#aboutus" },
+];
+
+const chargerMenuLabels = {
+  "charger-6kw-ac": "6 kW AC",
+  "charger-12kw-ac": "12 kW AC",
+  "charger-30kw": "30 kW Urban",
+  "charger-60kw": "60 kW Retail",
+  "charger-120kw": "120 kW Highway",
+  "charger-180kw": "180 kW Travel",
+  "charger-240kw": "240 kW Fleet",
+  "charger-350kw": "350 kW Mega",
+};
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMarketplaceOpen, setIsMarketplaceOpen] = useState(false);
   const menuRef = useRef(null);
+  const marketplaceRef = useRef(null);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") setIsMobileMenuOpen(false);
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+        setIsMarketplaceOpen(false);
+      }
     };
+
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsMobileMenuOpen(false);
       }
+      if (marketplaceRef.current && !marketplaceRef.current.contains(e.target)) {
+        setIsMarketplaceOpen(false);
+      }
     };
-    if (isMobileMenuOpen) {
+
+    if (isMobileMenuOpen || isMarketplaceOpen) {
       document.addEventListener("keydown", handleKeyDown);
       document.addEventListener("mousedown", handleClickOutside);
     }
+
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isMobileMenuOpen]);
+  }, [isMarketplaceOpen, isMobileMenuOpen]);
 
-  const handleNav = () => setIsMobileMenuOpen(false);
+  const handleNav = () => {
+    setIsMobileMenuOpen(false);
+    setIsMarketplaceOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-20 border-b border-white/10 bg-[rgba(10,23,56,0.88)] backdrop-blur-xl">
@@ -37,17 +70,83 @@ function Header() {
         </a>
 
         <nav className="hidden items-center gap-6 text-sm font-semibold tracking-[0.08em] text-blue-100/80 lg:flex">
-          <a className="transition hover:text-white" href="#marketplace">Marketplace</a>
-          <a className="transition hover:text-white" href="#calculator">Returns</a>
-          <a className="transition hover:text-white" href="#top">Impact</a>
+          <a className="transition hover:text-white" href="#top">Home</a>
+
+          <div ref={marketplaceRef} className="relative flex items-center gap-0.5">
+            <span className="cursor-default">Marketplace</span>
+            <button
+              type="button"
+              className={`inline-flex h-5 min-w-5 items-center justify-center rounded-sm text-blue-100 transition ${
+                isMarketplaceOpen
+                  ? "text-white"
+                  : "hover:text-white"
+              }`}
+              aria-label="Open marketplace charger list"
+              aria-expanded={isMarketplaceOpen}
+              onClick={() => setIsMarketplaceOpen((prev) => !prev)}
+            >
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                className={`h-3.5 w-3.5 transition-transform ${isMarketplaceOpen ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 8L10 12L14 8"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div
+              className={`absolute left-0 top-full z-30 pt-3 transition duration-150 ${
+                isMarketplaceOpen
+                  ? "pointer-events-auto opacity-100"
+                  : "pointer-events-none opacity-0"
+              }`}
+            >
+              <div className="w-[320px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_24px_60px_rgba(2,8,23,0.22)]">
+                <div className="border-b border-slate-200 bg-slate-50 px-4 py-3">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
+                    Charger Opportunities
+                  </div>
+                </div>
+                <div className="max-h-[360px] overflow-y-auto p-2">
+                  {segments.map((segment) => (
+                    <a
+                      key={segment.id}
+                      href={`#charger/${segment.id}`}
+                      onClick={handleNav}
+                      className="block rounded-xl px-3 py-3 transition hover:bg-slate-100"
+                    >
+                      <div className="text-sm font-semibold text-slate-900">
+                        {chargerMenuLabels[segment.id] ?? segment.power}
+                      </div>
+                      <div className="mt-1 text-xs font-medium text-slate-500">
+                        View opportunity
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {navItems.slice(1).map((item) => (
+            <a key={item.label} className="transition hover:text-white" href={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href="#calculator" className="secondary-button !px-5 !py-3">Get in Touch</a>
-          <a href="#marketplace" className="primary-button !px-5 !py-3">Invest now</a>
-        </div>
+           <a href="#calculator" className="secondary-button !px-5 !py-3">Login</a>
+           <a href="#calculator" className="primary-button !px-5 !py-3">Sign Up</a>
+         </div>
 
-        {/* Hamburger button — mobile only */}
         <button
           type="button"
           className="flex items-center justify-center rounded-xl border border-white/12 bg-white/8 p-2.5 text-blue-100/80 transition hover:bg-white/12 hover:text-white lg:hidden"
@@ -69,23 +168,67 @@ function Header() {
         </button>
       </div>
 
-      {/* Mobile dropdown menu */}
       <div
         ref={menuRef}
         className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
-          isMobileMenuOpen ? "max-h-[320px] opacity-100" : "max-h-0 opacity-0"
+          isMobileMenuOpen ? "max-h-[620px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="mx-auto w-[min(1180px,calc(100%-22px))] border-t border-white/10 py-6 md:w-[min(1180px,calc(100%-32px))]">
           <nav className="flex flex-col gap-2">
-            <a href="#marketplace" onClick={handleNav} className="rounded-xl px-4 py-3 text-sm font-semibold tracking-[0.08em] text-blue-100/80 transition hover:bg-white/8 hover:text-white">Marketplace</a>
-            <a href="#calculator" onClick={handleNav} className="rounded-xl px-4 py-3 text-sm font-semibold tracking-[0.08em] text-blue-100/80 transition hover:bg-white/8 hover:text-white">Returns</a>
-            <a href="#top" onClick={handleNav} className="rounded-xl px-4 py-3 text-sm font-semibold tracking-[0.08em] text-blue-100/80 transition hover:bg-white/8 hover:text-white">Impact</a>
+            <a
+              href="#top"
+              onClick={handleNav}
+              className="rounded-xl px-4 py-3 text-sm font-semibold tracking-[0.08em] text-blue-100/80 transition hover:bg-white/8 hover:text-white"
+            >
+              Home
+            </a>
+
+            <div className="rounded-xl border border-white/10 bg-white/4 px-4 py-3">
+              <div className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.08em] text-blue-100/80">
+                <span className="text-white">Marketplace</span>
+                <span className="inline-flex h-4 w-4 items-center justify-center text-blue-100">
+                  <svg viewBox="0 0 20 20" fill="none" className="h-3.5 w-3.5" aria-hidden="true">
+                    <path
+                      d="M6 8L10 12L14 8"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div className="mt-3 flex flex-col gap-1 border-t border-white/10 pt-3">
+                {segments.map((segment) => (
+                  <a
+                    key={segment.id}
+                    href={`#charger/${segment.id}`}
+                    onClick={handleNav}
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-blue-100/70 transition hover:bg-white/8 hover:text-white"
+                  >
+                    {chargerMenuLabels[segment.id] ?? segment.power}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {navItems.slice(1).map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={handleNav}
+                className="rounded-xl px-4 py-3 text-sm font-semibold tracking-[0.08em] text-blue-100/80 transition hover:bg-white/8 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
+
           <div className="mt-4 flex flex-col gap-3 border-t border-white/10 pt-4">
-            <a href="#calculator" onClick={handleNav} className="secondary-button !w-full !justify-center !px-5 !py-3">Get in Touch</a>
-            <a href="#marketplace" onClick={handleNav} className="primary-button !w-full !justify-center !px-5 !py-3">Invest now</a>
-          </div>
+             <a href="#calculator" onClick={handleNav} className="secondary-button !w-full !justify-center !px-5 !py-3">Login</a>
+             <a href="#calculator" onClick={handleNav} className="primary-button !w-full !justify-center !px-5 !py-3">Sign Up</a>
+           </div>
         </div>
       </div>
     </header>
