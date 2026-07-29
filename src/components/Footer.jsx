@@ -71,14 +71,17 @@ function Footer() {
               <a className="transition hover:text-white" href="#top">
                 Home
               </a>
+              <a className="transition hover:text-white" href="#aboutus">
+                About Us
+              </a>
+              <a className="transition hover:text-white" href="#investordeck">
+                Investor Deck
+              </a>
               <a className="transition hover:text-white" href="#marketplace">
                 Charger opportunities
               </a>
-              <a className="transition hover:text-white" href="#calculator">
-                Investment simulator
-              </a>
-              <a className="transition hover:text-white" href="#top">
-                Network impact
+              <a className="transition hover:text-white" href="#contact">
+                Get in touch
               </a>
             </div>
           </div>
@@ -95,7 +98,7 @@ function Footer() {
               <a className="transition hover:text-white" href="#top">
                 Investor journey
               </a>
-              <a className="transition hover:text-white" href="#top">
+              <a className="transition hover:text-white" href="#faq">
                 FAQ
               </a>
             </div>
@@ -153,7 +156,10 @@ function Footer() {
             <a className="transition hover:text-white" href="#top">
               Back to top
             </a>
-            <a className="transition hover:text-white" href="#calculator">
+            <a className="transition hover:text-white" href="#investordeck">
+              Investor Deck
+            </a>
+            <a className="transition hover:text-white" href="#contact">
               Get in touch
             </a>
           </div>

@@ -4,6 +4,10 @@ import InvestmentCalculator from "./components/InvestmentCalculator";
 import SegmentsGrid from "./components/SegmentsGrid";
 import Footer from "./components/Footer";
 import ChargerOpportunityPage from "./components/ChargerOpportunityPage";
+import InvestorDeckPage from "./components/InvestorDeckPage";
+import AboutUsPage from "./components/AboutUsPage";
+import ContactPage from "./components/ContactPage";
+import FAQPage from "./components/FAQPage";
 import { marketStats, marketplaceHighlights, segments, steps } from "./data/content";
 
 const getRouteFromHash = () => {
@@ -11,6 +15,22 @@ const getRouteFromHash = () => {
 
   if (hash.startsWith("charger/")) {
     return { page: "charger", segmentId: hash.slice("charger/".length), anchor: null };
+  }
+
+  if (hash === "investordeck") {
+    return { page: "investordeck", segmentId: null, anchor: null };
+  }
+
+  if (hash === "contact") {
+    return { page: "contact", segmentId: null, anchor: null };
+  }
+
+  if (hash === "aboutus") {
+    return { page: "aboutus", segmentId: null, anchor: null };
+  }
+
+  if (hash === "faq") {
+    return { page: "faq", segmentId: null, anchor: null };
   }
 
   return { page: "home", segmentId: null, anchor: hash || null };
@@ -122,6 +142,14 @@ function App() {
           onBackToMarketplace={handleBackToMarketplace}
           onOpenSimulator={() => handleOpenSimulator(routeSegment.id)}
         />
+      ) : route.page === "investordeck" ? (
+        <InvestorDeckPage />
+      ) : route.page === "contact" ? (
+        <ContactPage />
+      ) : route.page === "aboutus" ? (
+        <AboutUsPage />
+      ) : route.page === "faq" ? (
+        <FAQPage />
       ) : (
       <main id="top" className="pb-12 pt-6 sm:pt-8">
         <div className="mx-auto w-[min(1480px,calc(100%-22px))] md:w-[min(1480px,calc(100%-32px))]">
@@ -209,23 +237,23 @@ function App() {
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="mt-5 flex flex-wrap items-center gap-2">
-                    {segments.slice(0, 5).map((segment, index) => (
-                      <button
-                        key={segment.id}
-                        type="button"
-                        className={`rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] transition ${
-                          index === spotlightIndex
-                            ? "bg-[#2a56c6] text-white shadow-[0_16px_24px_rgba(42,86,198,0.24)]"
-                            : "bg-white text-slate-600 hover:-translate-y-0.5"
-                        }`}
-                        onClick={() => setSpotlightIndex(index)}
-                      >
-                        {segment.power}
-                      </button>
-                    ))}
+                    <div className="mt-5 flex flex-wrap items-center gap-2">
+                      {segments.slice(0, 5).map((segment, index) => (
+                        <button
+                          key={segment.id}
+                          type="button"
+                          className={`rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] transition ${
+                            index === spotlightIndex
+                              ? "bg-[#2a56c6] text-white shadow-[0_16px_24px_rgba(42,86,198,0.24)]"
+                              : "bg-white text-slate-600 hover:-translate-y-0.5"
+                          }`}
+                          onClick={() => setSpotlightIndex(index)}
+                        >
+                          {segment.power}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -276,63 +304,7 @@ function App() {
             </div>
           </section>
 
-          <section id="marketplace" className="mt-8">
-            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">
-                  Marketplace
-                </p>
-                <h2 className="mt-1 text-2xl font-black tracking-[-0.03em] text-slate-950">
-                  Available charger opportunities
-                </h2>
-              </div>
-            </div>
-            <SegmentsGrid
-              segments={segments}
-              selectedSegmentId={selectedSegmentId}
-              onSelectSegment={handleOpenOpportunity}
-            />
-          </section>
-
-          <section className="mt-10 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
-            <div className="glass-card rounded-[30px] p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
-                Why investors choose ZipInvest
-              </p>
-              <h3 className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-950">
-                Built for resilient EV infrastructure
-              </h3>
-              <div className="mt-6 space-y-4">
-                {marketplaceHighlights.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[24px] border border-white/80 bg-white/80 p-4 text-sm leading-7 text-slate-600 shadow-[0_12px_28px_rgba(15,23,42,0.05)]"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="process-panel p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
-                How it works
-              </p>
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
-                {steps.map((step, index) => (
-                  <div key={step.title} className="process-step">
-                    <div className="text-4xl font-black tracking-[-0.05em] text-slate-950">
-                      {index + 1}
-                    </div>
-                    <h4 className="mt-3 text-lg font-bold text-slate-950">{step.title}</h4>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{step.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section id="calculator" className="mt-10 grid gap-8 xl:items-stretch xl:grid-cols-[1fr_475px]">
+          <section id="calculator" className="mt-8 grid gap-8 xl:items-stretch xl:grid-cols-[1fr_475px]">
             <div className="glass-card flex h-full flex-col rounded-[30px] p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
                 Opportunity overview
@@ -377,6 +349,63 @@ function App() {
               onSegmentChange={setSelectedSegmentId}
               onInvestmentChange={setInvestmentAmount}
             />
+          </section>
+
+          <section id="marketplace" className="mt-10">
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">
+                  Marketplace
+                </p>
+                <h2 className="mt-1 text-2xl font-black tracking-[-0.03em] text-slate-950">
+                  Available charger opportunities
+                </h2>
+              </div>
+            </div>
+
+            <SegmentsGrid
+              segments={segments}
+              selectedSegmentId={selectedSegmentId}
+              onSelectSegment={handleOpenOpportunity}
+            />
+          </section>
+
+          <section className="mt-10 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+            <div className="glass-card rounded-[30px] p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
+                Why investors choose ZipInvest
+              </p>
+              <h3 className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-950">
+                Built for resilient EV infrastructure
+              </h3>
+              <div className="mt-6 space-y-4">
+                {marketplaceHighlights.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[24px] border border-white/80 bg-white/80 p-4 text-sm leading-7 text-slate-600 shadow-[0_12px_28px_rgba(15,23,42,0.05)]"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="process-panel p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
+                How it works
+              </p>
+              <div className="mt-6 grid gap-4 md:grid-cols-3">
+                {steps.map((step, index) => (
+                  <div key={step.title} className="process-step">
+                    <div className="text-4xl font-black tracking-[-0.05em] text-slate-950">
+                      {index + 1}
+                    </div>
+                    <h4 className="mt-3 text-lg font-bold text-slate-950">{step.title}</h4>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </section>
         </div>
       </main>
