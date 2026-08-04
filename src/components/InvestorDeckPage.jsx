@@ -143,7 +143,7 @@ function InvestorDeckPage() {
               India&apos;s EV market is projected to grow at over 40% CAGR through
               2030, driven by government incentives, fleet electrification, and
               rising fuel costs. Charging infrastructure is the critical backbone
-              — and the bottleneck.
+              â€” and the bottleneck.
             </p>
             <p className="text-sm leading-7 text-blue-100/80">
               ZipInvest provides fractional access to high-utilization DC fast
@@ -217,7 +217,7 @@ function InvestorDeckPage() {
     <Slide key="assets">
       <DeckSlide
         title="Asset Classes"
-        subtitle="Eight charger types spanning every segment of the EV market"
+        subtitle="Diversified infrastructure opportunities across charging, storage, and fleet segments"
         accent="emerald"
       >
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -469,7 +469,7 @@ function InvestorDeckPage() {
     <Slide key="contact">
       <DeckSlide
         title="Get In Touch"
-        subtitle="Ready to explore EV charging infrastructure as an asset class?"
+        subtitle="Ready to explore clean energy and mobility infrastructure as an asset class?"
         accent="brand"
       >
         <div className="grid gap-6 md:grid-cols-2">

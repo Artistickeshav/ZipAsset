@@ -6,25 +6,218 @@ import charger120kwImage from "../assets/charger-120kw.png";
 import charger180kwImage from "../assets/charger-180kw.png";
 import charger240kwImage from "../assets/charger-240kw.png";
 import charger350kwImage from "../assets/charger-350kw.png";
+import bessSystemImage from "../assets/bess-system.png";
+import evDcFastChargingImage from "../assets/ev-dc-fast-charging.png";
+import evPassengerFleetImage from "../assets/ev-passenger-fleet.png";
+import evCargoFleetImage from "../assets/ev-cargo-fleets.png";
 
 export const pageTabs = ["Marketplace", "Charger Classes", "Returns", "Impact"];
 
 export const marketStats = [
-  { label: "Power range", value: "6 kW - 350 kW" },
-  { label: "Preferred sites", value: "Retail - Fleet - Highway" },
-  { label: "Investor entry", value: "Rs 1.5K - Rs 15L+" },
+  { label: "Asset Capacity", value: "6 kW - 350 kW+ | Scalable Storage" },
+  { label: "Coverage Areas", value: "Urban Hubs - Logistics - Long Haul Routes" },
+  { label: "Investor Entry", value: "Rs 1.5K - Rs 15L+" },
 ];
 
 export const marketplaceHighlights = [
-  "High-utilization charging sites in urban corridors, logistics parks and travel hubs.",
-  "Asset-backed exposure to premium charging hardware, software and energy management.",
-  "Flexible participation across AC chargers, compact fast chargers and flagship ultra-fast stations.",
+  "High-utilization infrastructure across charging networks, energy storage, and fleet operations.",
+  "Asset-backed exposure to premium hardware, software, AI optimization, and energy management.",
+  "Flexible participation in EV charging, battery storage, passenger fleets, and cargo logistics.",
 ];
 
 export const steps = [
-  { title: "Browse", description: "Compare charger classes by power, location and expected utilization." },
-  { title: "Model", description: "Adjust your stake to preview projected returns and lock periods." },
-  { title: "Deploy", description: "Back site-level infrastructure with transparent underwriting." },
+  { title: "Browse", description: "Explore opportunities across charging networks, energy storage, and fleet infrastructure." },
+  { title: "Model", description: "Adjust your investment size to preview returns, risks, and lock-in periods." },
+  { title: "Deploy", description: "Invest in live assets backed by transparent underwriting and real-time monitoring." },
+];
+
+export const segmentShowcaseStats = [
+  { label: "Active Segments", value: "4" },
+  { label: "Autonomous monitoring", value: "24/7" },
+  { label: "Response time", value: "<1s" },
+  { label: "System uptime", value: "99.9%" },
+  { label: "Total TVL", value: "Rs 190M+" },
+];
+
+export const investyzSegmentsLive = [
+  {
+    id: "autonomous-maintenance-engines",
+    title: "Autonomous Maintenance Engines",
+    category: "Battery Energy Storage",
+    metric: "99% uptime for CPOs",
+    tvl: "Rs 32.0M",
+    investors: "1,923",
+    apy: "11.5%",
+    accent: "from-emerald-400 via-cyan-300 to-blue-400",
+    accentDark: "#10b981",
+    icon: "🔋",
+    image: bessSystemImage,
+    description:
+      "Battery storage assets support chargers and grid capacity during peak demand windows, enabling higher uptime and reliable reserve power for charging networks.",
+    tags: ["Battery-Backed", "Reserve Power", "Grid Flex"],
+  },
+  {
+    id: "zero-downtime-power-orchestration",
+    title: "Zero-Downtime Power Orchestration",
+    category: "EV DC Fast Charging",
+    metric: "30% reduction in energy costs",
+    tvl: "Rs 28.0M",
+    investors: "3,421",
+    apy: "13.5%",
+    accent: "from-blue-400 via-indigo-300 to-cyan-300",
+    accentDark: "#2a56c6",
+    icon: "⚡",
+    image: evDcFastChargingImage,
+    description:
+      "Inside EV DC Fast Charging, rapid high-power stations deliver premium throughput and lower energy costs through intelligent load balancing and smart demand response.",
+    details: {
+      title: "Inside EV DC Fast Charging",
+      subtitle:
+        "High-power charging hubs are optimized for fast vehicle turnaround, energy cost savings, and intelligent demand response.",
+      features: ["Smart Load Balancing", "Ultra-Fast Throughput", "Peak Demand Management"],
+      snapshot: [
+        { label: "Lock Period", value: "120 days" },
+        { label: "Min. Investment", value: "Rs 10K" },
+        { label: "Risk Level", value: "Medium" },
+      ],
+    },
+    tags: ["Fast Charging", "Grid Aware", "Cost Optimized"],
+  },
+  {
+    id: "self-balancing-grid",
+    title: "The Self-Balancing Grid",
+    category: "EV Passenger Fleets",
+    metric: "40% increase in component life",
+    tvl: "Rs 24.0M",
+    investors: "1,768",
+    apy: "12.0%",
+    accent: "from-fuchsia-400 via-violet-300 to-blue-300",
+    accentDark: "#a855f7",
+    icon: "🚗",
+    image: evPassengerFleetImage,
+    description:
+      "Intelligent passenger fleet charging adapts schedules, routing, and charge cycles to maximize uptime while extending vehicle component life.",
+    tags: ["Fleet Charging", "Predictive", "Reliability"],
+  },
+  {
+    id: "ev-cargo-fleets",
+    title: "Dynamic Mission Planning",
+    category: "EV Cargo Fleets",
+    metric: "60% route efficiency gain",
+    tvl: "Rs 19.5M",
+    investors: "982",
+    apy: "14.0%",
+    accent: "from-amber-400 via-orange-300 to-rose-300",
+    accentDark: "#f59e0b",
+    icon: "🚛",
+    image: evCargoFleetImage,
+    description:
+      "Cargo fleet planning links charging availability, route efficiency and delivery schedules to reduce idle time and maximise commercial utilization.",
+    tags: ["Route Optimization", "Cargo Ready", "Networked"],
+  },
+];
+
+export const investyzSegmentsUpcoming = [
+  {
+    id: "vehicle-to-grid",
+    title: "Vehicle-to-Grid (V2G)",
+    eyebrow: "Bidirectional Energy Flow",
+    status: "Coming Soon",
+    accentColor: "#06b6d4",
+    description: "Turn EV fleets into distributed grid assets — sell stored energy back during peak demand windows.",
+  },
+  {
+    id: "green-hydrogen",
+    title: "Green Hydrogen Corridors",
+    eyebrow: "Next-Gen Clean Fuel",
+    status: "On Roadmap",
+    accentColor: "#8b5cf6",
+    description: "Infrastructure-backed investment in hydrogen fueling corridors for heavy commercial transport decarbonization.",
+  },
+];
+
+export const segmentBenefits = [
+  {
+    title: "High Yield Returns",
+    stat: "14%",
+    statLabel: "Max APY",
+    icon: "📈",
+    body: "Earn up to 14% APY across 4 live infrastructure segments — from EV fast charging to cargo fleet AI.",
+  },
+  {
+    title: "Real Asset Backing",
+    stat: "Rs 190M+",
+    statLabel: "Total TVL",
+    icon: "🏗️",
+    body: "Every token is backed by physical infrastructure — chargers, batteries, fleets — generating real revenue.",
+  },
+  {
+    title: "Carbon Neutral",
+    stat: "50K+",
+    statLabel: "Tons CO2 Offset",
+    icon: "🌿",
+    body: "Your investments power lower-emission infrastructure and accelerate India's sustainable mobility transition.",
+  },
+  {
+    title: "Periodic Payouts",
+    stat: "13K+",
+    statLabel: "Active Investors",
+    icon: "💸",
+    body: "Receive rewards on flexible schedules including weekly, monthly, quarterly and annual distributions.",
+  },
+];
+
+export const trustedCertifications = [
+  "Startup India Certified",
+  "MSME Registered",
+  "ISO 9001 Certified",
+  "ISO 14001 Certified",
+];
+
+export const segmentFlow = [
+  {
+    step: "01",
+    title: "Connect Your Wallet",
+    body: "Link your wallet to access infrastructure-backed opportunities on the network.",
+  },
+  {
+    step: "02",
+    title: "Choose Your Segment",
+    body: "Select from live battery storage, EV fast charging, and EV passenger fleet opportunities.",
+  },
+  {
+    step: "03",
+    title: "Invest & Earn",
+    body: "Pick a plan that fits your goals and start earning daily rewards immediately.",
+  },
+];
+
+export const segmentProcess = [
+  {
+    step: "01",
+    title: "Asset Identification",
+    body: "We identify high-potential infrastructure opportunities, starting with EV DC fast chargers.",
+  },
+  {
+    step: "02",
+    title: "Asset Deployment & Structuring",
+    body: "Assets are deployed or partnered with, and structured into investable opportunities.",
+  },
+  {
+    step: "03",
+    title: "Fractional Investment",
+    body: "Investors can participate with smaller amounts through fractional ownership.",
+  },
+  {
+    step: "04",
+    title: "Revenue Generation",
+    body: "Assets generate real-world income through usage, such as EV charging demand.",
+  },
+  {
+    step: "05",
+    title: "Returns Distribution",
+    body: "Investors receive returns based on actual asset performance.",
+  },
 ];
 
 export const segments = [

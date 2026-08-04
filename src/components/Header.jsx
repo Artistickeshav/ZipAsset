@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react";
 import { segments } from "../data/content";
 import BrandLogo from "./BrandLogo";
 
 const navItems = [
-  { label: "Home", href: "#top" },
+  { label: "Segments", href: "#segments" },
   { label: "Investor Deck", href: "#investordeck" },
   { label: "Contact", href: "#contact" },
   { label: "About Us", href: "#aboutus" },
@@ -70,7 +71,7 @@ function Header() {
         </a>
 
         <nav className="hidden items-center gap-6 text-sm font-semibold tracking-[0.08em] text-blue-100/80 lg:flex">
-          <a className="transition hover:text-white" href="#top">Home</a>
+          <a className="transition hover:text-white" href="#segments">Segments</a>
 
           <div ref={marketplaceRef} className="relative flex items-center gap-0.5">
             <span className="cursor-default">Marketplace</span>
@@ -143,9 +144,30 @@ function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-           <a href="#calculator" className="secondary-button !px-5 !py-3">Login</a>
-           <a href="#calculator" className="primary-button !px-5 !py-3">Sign Up</a>
-         </div>
+          <Show when="signed-out">
+            <SignInButton mode="modal">
+              <button type="button" className="secondary-button !px-5 !py-3">
+                Login
+              </button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <button type="button" className="primary-button !px-5 !py-3">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <div className="rounded-full border border-white/12 bg-white/8 p-1">
+              <UserButton
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: "h-10 w-10",
+                  },
+                }}
+              />
+            </div>
+          </Show>
+        </div>
 
         <button
           type="button"
@@ -177,11 +199,11 @@ function Header() {
         <div className="mx-auto w-[min(1180px,calc(100%-22px))] border-t border-white/10 py-6 md:w-[min(1180px,calc(100%-32px))]">
           <nav className="flex flex-col gap-2">
             <a
-              href="#top"
+              href="#segments"
               onClick={handleNav}
               className="rounded-xl px-4 py-3 text-sm font-semibold tracking-[0.08em] text-blue-100/80 transition hover:bg-white/8 hover:text-white"
             >
-              Home
+              Segments
             </a>
 
             <div className="rounded-xl border border-white/10 bg-white/4 px-4 py-3">
@@ -226,9 +248,38 @@ function Header() {
           </nav>
 
           <div className="mt-4 flex flex-col gap-3 border-t border-white/10 pt-4">
-             <a href="#calculator" onClick={handleNav} className="secondary-button !w-full !justify-center !px-5 !py-3">Login</a>
-             <a href="#calculator" onClick={handleNav} className="primary-button !w-full !justify-center !px-5 !py-3">Sign Up</a>
-           </div>
+            <Show when="signed-out">
+              <SignInButton mode="modal">
+                <button
+                  type="button"
+                  onClick={handleNav}
+                  className="secondary-button !w-full !justify-center !px-5 !py-3"
+                >
+                  Login
+                </button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <button
+                  type="button"
+                  onClick={handleNav}
+                  className="primary-button !w-full !justify-center !px-5 !py-3"
+                >
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </Show>
+            <Show when="signed-in">
+              <div className="flex justify-center pt-2">
+                <UserButton
+                  appearance={{
+                    elements: {
+                      userButtonAvatarBox: "h-11 w-11",
+                    },
+                  }}
+                />
+              </div>
+            </Show>
+          </div>
         </div>
       </div>
     </header>
