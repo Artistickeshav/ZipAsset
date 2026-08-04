@@ -3,7 +3,7 @@ function AboutUsPage() {
     { label: "Charger Classes", value: "8", desc: "From AC to mega-fast" },
     { label: "Risk Tiers", value: "3", desc: "Low to High" },
     { label: "Min Ticket", value: "Rs 1.5K", desc: "Accessible entry" },
-    { label: "APY Range", value: "9.5 — 19.5%", desc: "Competitive returns" },
+    { label: "APY Range", value: "9.5 â€” 19.5%", desc: "Competitive returns" },
   ];
 
   const advisors = [
@@ -21,13 +21,13 @@ function AboutUsPage() {
     },
     {
       name: "Mr Ankit Ahuja",
-      role: "Overseas Advisor — SE Asia",
+      role: "Overseas Advisor â€” SE Asia",
       desc: "BITS Pilani, MIT Global SCM, Purdue University, INSEAD. Procurement excellence, digital solutions, and transformation.",
       initials: "AA",
     },
     {
       name: "Mr Harinder Singh",
-      role: "Overseas Advisor — GCC",
+      role: "Overseas Advisor â€” GCC",
       desc: "Project management expert based in Abu Dhabi, UAE, with a strong background in managing energy projects.",
       initials: "HS",
     },
@@ -61,7 +61,7 @@ function AboutUsPage() {
             <p className="mt-8 max-w-3xl text-base leading-8 text-blue-100/80 sm:text-lg">
               ZipInvest is the marketplace where everyday investors own shares of
               revenue-generating EV charging infrastructure. We combine institutional-grade
-              asset selection with accessible, fractional participation — turning the
+              asset selection with accessible, fractional participation â€” turning the
               charging revolution into a tangible asset class.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -86,7 +86,7 @@ function AboutUsPage() {
                 <p className="text-sm leading-7 text-blue-100/80">
                   India is adding millions of electric vehicles to its roads every year.
                   But the charging infrastructure that makes EV ownership practical is
-                  struggling to keep pace — not because of technology, but because of
+                  struggling to keep pace â€” not because of technology, but because of
                   capital.
                 </p>
                 <p className="text-sm leading-7 text-blue-100/80">
@@ -98,7 +98,7 @@ function AboutUsPage() {
               </div>
               <div className="space-y-4">
                 <p className="text-sm leading-7 text-blue-100/80">
-                  We deploy battery-backed DC fast chargers at high-utilization sites —
+                  We deploy battery-backed DC fast chargers at high-utilization sites â€”
                   retail centers, logistics parks, highway plazas, and fleet depots.
                   Every charger is instrumented, monitored, and underwritten with
                   transparent performance data.
@@ -141,7 +141,7 @@ function AboutUsPage() {
               </h2>
               <p className="mt-4 text-sm leading-7 text-blue-100/80">
                 A future where every EV driver has access to reliable, paid charging
-                — and where investors earn consistent returns from the backbone of
+                â€” and where investors earn consistent returns from the backbone of
                 that network.
               </p>
             </div>
@@ -206,7 +206,7 @@ function AboutUsPage() {
               {
                 icon: "&#9733;",
                 title: "Active Management",
-                desc: "We don&apos;t just pool capital — we manage deployment, maintenance, and operator relationships on your behalf.",
+                desc: "We don&apos;t just pool capital â€” we manage deployment, maintenance, and operator relationships on your behalf.",
               },
               {
                 icon: "&#9733;",
@@ -310,7 +310,7 @@ function AboutUsPage() {
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-sm leading-8 text-blue-100/80">
               Start exploring charger opportunities, model your returns in the simulator,
-              and deploy your allocation — all in minutes.
+              and deploy your allocation â€” all in minutes.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <a href="#marketplace" className="primary-button px-8 py-4 text-base">

@@ -8,6 +8,7 @@ import InvestorDeckPage from "./components/InvestorDeckPage";
 import AboutUsPage from "./components/AboutUsPage";
 import ContactPage from "./components/ContactPage";
 import FAQPage from "./components/FAQPage";
+import SegmentsPage from "./components/SegmentsPage";
 import { marketStats, marketplaceHighlights, segments, steps } from "./data/content";
 
 const getRouteFromHash = () => {
@@ -19,6 +20,10 @@ const getRouteFromHash = () => {
 
   if (hash === "investordeck") {
     return { page: "investordeck", segmentId: null, anchor: null };
+  }
+
+  if (hash === "segments") {
+    return { page: "segments", segmentId: null, anchor: null };
   }
 
   if (hash === "contact") {
@@ -144,6 +149,8 @@ function App() {
         />
       ) : route.page === "investordeck" ? (
         <InvestorDeckPage />
+      ) : route.page === "segments" ? (
+        <SegmentsPage />
       ) : route.page === "contact" ? (
         <ContactPage />
       ) : route.page === "aboutus" ? (
@@ -161,16 +168,14 @@ function App() {
                 </div>
 
                 <div className="space-y-4">
-                  <h1 className="hero-title max-w-4xl text-5xl font-bold uppercase leading-[0.94] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-[5.5rem]">
-                    <span className="hero-title-line">Own Revenue</span>
-                    <span className="hero-title-line">Generating EV</span>
-                    <span className="hero-title-line">Charging Assets</span>
-                    <span className="hero-title-line">Across India</span>
+                  <h1 className="hero-title max-w-4xl text-5xl font-medium uppercase leading-[0.94] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-[5.5rem]">
+                    <span className="hero-title-line">Invest in India&apos;s</span>
+                    <span className="hero-title-line">Next-Gen Energy</span>
+                    <span className="hero-title-line">&amp; Mobility</span>
+                    <span className="hero-title-line">Infrastructure</span>
                   </h1>
                   <p className="hero-subtitle max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                    Invest in battery-backed EV charging infrastructure with clear returns,
-                    premium deployment quality, and a marketplace built to scale with India&apos;s
-                    mobility shift.
+                    Invest in clean energy and mobility infrastructure built for stable returns and long-term growth.
                   </p>
                 </div>
 
@@ -310,25 +315,25 @@ function App() {
                 Opportunity overview
               </p>
               <h2 className="mt-2 max-w-3xl text-3xl font-black tracking-[-0.04em] text-slate-950">
-                The charging network is expanding where drivers need it most
+                India&apos;s clean energy and mobility infrastructure is scaling across four key segments
               </h2>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {[
                   {
-                    title: "Residential and workplace",
-                    body: "Long-dwell charging where daily convenience and repeat usage support dependable base demand.",
+                    title: "EV DC Fast Charging",
+                    body: "High-power charging stations across retail, fleet, and highway corridors delivering rapid turnaround and premium revenue.",
                   },
                   {
-                    title: "Destination charging",
-                    body: "Hotels, offices and mixed-use destinations where parked vehicles can charge over several hours.",
+                    title: "Battery Energy Storage",
+                    body: "Strategic energy storage systems supporting grid stability, peak shaving, and long-duration energy management.",
                   },
                   {
-                    title: "Commercial fast charging",
-                    body: "Retail and light-fleet sites where DC fast chargers improve turnover and site-level revenue potential.",
+                    title: "EV Passenger Fleets",
+                    body: "Intelligent charging and fleet optimization for passenger transport with adaptive scheduling and uptime maximization.",
                   },
                   {
-                    title: "Highway corridors",
-                    body: "Premium travel locations where high-power fast chargers and ultra-fast chargers support throughput.",
+                    title: "EV Cargo Fleets",
+                    body: "Commercial logistics infrastructure linking charging, route efficiency, and delivery schedules for operational optimization.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="metric-tile p-5">
@@ -376,7 +381,7 @@ function App() {
                 Why investors choose ZipInvest
               </p>
               <h3 className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-950">
-                Built for resilient EV infrastructure
+                Built for scalable clean energy and mobility assets
               </h3>
               <div className="mt-6 space-y-4">
                 {marketplaceHighlights.map((item) => (

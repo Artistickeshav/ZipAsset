@@ -1,6 +1,10 @@
 import BrandLogo from "./BrandLogo";
 
 function Footer() {
+  const handleResourceLink = (anchor) => {
+    window.location.hash = anchor;
+  };
+
   const socialLinks = [
     {
       label: "Instagram",
@@ -80,6 +84,9 @@ function Footer() {
               <a className="transition hover:text-white" href="#marketplace">
                 Charger opportunities
               </a>
+              <a className="transition hover:text-white" href="#segments">
+                Investment Segments
+              </a>
               <a className="transition hover:text-white" href="#contact">
                 Get in touch
               </a>
@@ -89,15 +96,27 @@ function Footer() {
           <div>
             <h4 className="text-sm font-black uppercase tracking-[0.18em] text-white">Resources</h4>
             <div className="mt-4 grid gap-3 text-sm text-blue-100/75">
-              <a className="transition hover:text-white" href="#calculator">
+              <button 
+                type="button"
+                className="transition hover:text-white text-left"
+                onClick={() => handleResourceLink("calculator")}
+              >
                 Returns preview
-              </a>
-              <a className="transition hover:text-white" href="#marketplace">
+              </button>
+              <button 
+                type="button"
+                className="transition hover:text-white text-left"
+                onClick={() => handleResourceLink("marketplace")}
+              >
                 Asset classes
-              </a>
-              <a className="transition hover:text-white" href="#top">
+              </button>
+              <button 
+                type="button"
+                className="transition hover:text-white text-left"
+                onClick={() => handleResourceLink("top")}
+              >
                 Investor journey
-              </a>
+              </button>
               <a className="transition hover:text-white" href="#faq">
                 FAQ
               </a>

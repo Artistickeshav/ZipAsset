@@ -5,7 +5,7 @@ function ProcessSection({ processSteps }) {
     <Section
       id="how-it-works"
       title="How ZipInvest works"
-      description="The flow below gives you a clean investor journey without making the page feel too crowded."
+      description="A streamlined investor journey across all segments: browse opportunities, model your returns, review risk profiles, and deploy capital into live assets."
     >
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {processSteps.map((step, index) => (

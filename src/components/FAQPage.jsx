@@ -4,35 +4,39 @@ function FAQPage() {
   const faqs = [
     {
       q: "What is ZipInvest?",
-      a: "ZipInvest is a marketplace-style platform for investing in EV DC fast charging infrastructure across retail, fleet, and highway locations in India. You can own fractional shares of revenue-generating charging assets with clear return profiles.",
+      a: "ZipInvest is a marketplace-style platform for investing in clean energy and mobility infrastructure across four key segments: EV DC fast charging, battery energy storage, passenger fleets, and cargo logistics. You can own fractional shares of revenue-generating infrastructure assets with clear return profiles.",
+    },
+    {
+      q: "What segments can I invest in?",
+      a: "ZipInvest offers four investment segments: (1) EV DC Fast Charging - high-utilization chargers across retail, fleet, and highway corridors; (2) Battery Energy Storage (BESS) - strategic energy storage systems; (3) EV Passenger Fleets - intelligent fleet charging and optimization; (4) EV Cargo Fleets - commercial logistics infrastructure. Each segment has distinct risk-return profiles and deployment characteristics.",
     },
     {
       q: "How does fractional investment work?",
-      a: "Instead of buying an entire charger, you can invest a minimum ticket starting at Rs 1,500. Your investment is pooled with others to fund site-level infrastructure, and you earn proportional returns based on the charger's utilization and yield rate.",
+      a: "Instead of buying an entire infrastructure asset, you can invest a minimum ticket starting at Rs 1,500. Your investment is pooled with others to fund asset-level deployment, and you earn proportional returns based on utilization, yield rates, and operational performance across all segments.",
     },
     {
-      q: "What are the risk levels of different charger classes?",
-      a: "Chargers are categorized into three risk tiers: Low Risk (6 kW AC, 12 kW AC, 30 kW Urban), Medium Risk (60 kW Retail, 120 kW Highway, 180 kW Ultra-Fast), and High Risk (240 kW Flagship, 350 kW Mega-Fast). Each tier has different yield expectations and lock periods.",
+      q: "What are the risk levels across segments?",
+      a: "Each segment and asset class is categorized by risk tier: Low Risk assets have stable, predictable returns; Medium Risk assets offer moderate growth with moderate volatility; High Risk assets provide higher potential returns with greater variability. Risk profiles vary by segment type, location, operational model, and market conditions.",
     },
     {
       q: "What is the expected return?",
-      a: "APY ranges from 9.5% for entry-level AC chargers to 19.5% for mega-fast stations. Returns depend on site utilization, power output, and energy pricing. Actual returns may vary based on operational performance.",
+      a: "APY ranges vary by segment and asset class, from 9.5% to 19.5% depending on deployment type and risk profile. Returns depend on asset utilization, operational efficiency, market demand, and pricing conditions. Actual returns may vary based on real-world operational performance.",
     },
     {
       q: "What is the lock period?",
-      a: "Each charger class has a defined lock period ranging from 45 days (6 kW AC) to 210 days (350 kW Mega-Fast). During the lock period, your investment is deployed and generating returns. Early withdrawal is not supported.",
+      a: "Each asset class has a defined lock period typically ranging from 45 to 210 days depending on segment and deployment type. During the lock period, your investment is deployed and generating returns. Early withdrawal is not supported, but lock periods end on schedule.",
     },
     {
       q: "How do I invest?",
-      a: "Browse charger opportunities on the Marketplace, use the Investment Simulator to model returns, review the risk profile, and then deploy your allocation. You can also use the Investment Simulator to preview daily and monthly return estimates.",
+      a: "Browse opportunities across all four segments on the Marketplace, use the Investment Simulator to model returns based on your preferred asset class and risk profile, review detailed disclosures, and then deploy your allocation. The simulator lets you preview daily, monthly, and annual return estimates.",
     },
     {
       q: "Is my investment secure?",
-      a: "Every investment is tied to physical hardware deployed at a specific site with real host-site contracts and transparent utilization monitoring. However, as with any infrastructure investment, there are inherent risks including utilization variability, grid dependencies, and maintenance considerations.",
+      a: "Every investment is backed by physical infrastructure deployed at a specific location with real host-site contracts and transparent performance monitoring. However, as with any infrastructure investment, there are inherent risks including utilization variability, operational dependencies, and market conditions. Review our Risk Disclosure before investing.",
     },
     {
       q: "Who is ZipInvest for?",
-      a: "ZipInvest is designed for retail investors, fleet operators, infrastructure partners, and institutional investors looking for asset-backed exposure to India's growing EV charging infrastructure. Tickets start at Rs 1,500, making it accessible to a wide range of investors.",
+      a: "ZipInvest is designed for retail investors, fleet operators, infrastructure partners, and institutional investors seeking asset-backed exposure to India's clean energy and mobility transition. Tickets start at Rs 1,500, making fractional ownership of critical infrastructure accessible to a wide range of investors.",
     },
     {
       q: "What are the payment methods accepted?",
