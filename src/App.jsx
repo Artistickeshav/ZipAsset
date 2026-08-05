@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import InvestmentCalculator from "./components/InvestmentCalculator";
 import SegmentsGrid from "./components/SegmentsGrid";
@@ -417,6 +418,7 @@ function App() {
       )}
 
       <Footer />
+      <Analytics />
     </div>
   );
 }
