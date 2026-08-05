@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@clerk/react": "^6.12.9",
+    "@vercel/analytics": "^2.0.1",
     "react": "latest",
     "react-dom": "latest"
   },
