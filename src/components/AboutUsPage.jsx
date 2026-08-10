@@ -3,7 +3,7 @@ function AboutUsPage() {
     { label: "Charger Classes", value: "8", desc: "From AC to mega-fast" },
     { label: "Risk Tiers", value: "3", desc: "Low to High" },
     { label: "Min Ticket", value: "Rs 1.5K", desc: "Accessible entry" },
-    { label: "APY Range", value: "9.5 â€” 19.5%", desc: "Competitive returns" },
+    { label: "APY Range", value: "9.5 - 19.5%", desc: "Competitive returns" },
   ];
 
   const advisors = [
@@ -21,13 +21,13 @@ function AboutUsPage() {
     },
     {
       name: "Mr Ankit Ahuja",
-      role: "Overseas Advisor â€” SE Asia",
+      role: "Overseas Advisor - SE Asia",
       desc: "BITS Pilani, MIT Global SCM, Purdue University, INSEAD. Procurement excellence, digital solutions, and transformation.",
       initials: "AA",
     },
     {
       name: "Mr Harinder Singh",
-      role: "Overseas Advisor â€” GCC",
+      role: "Overseas Advisor - GCC",
       desc: "Project management expert based in Abu Dhabi, UAE, with a strong background in managing energy projects.",
       initials: "HS",
     },
@@ -50,18 +50,17 @@ function AboutUsPage() {
   return (
     <main className="pb-12 pt-6 sm:pt-8">
       <div className="mx-auto w-[min(1480px,calc(100%-22px))] md:w-[min(1480px,calc(100%-32px))]">
-        {/* Hero */}
         <section className="mt-6">
-          <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 md:p-14 shadow-[0_30px_80px_rgba(10,23,56,0.4)]">
+          <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 shadow-[0_30px_80px_rgba(10,23,56,0.4)] md:p-14">
             <h1 className="text-4xl font-black tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-[5.5rem]">
               <span className="block">Powering India&apos;s</span>
-              <span className="block mt-2 text-blue-200">EV Infrastructure</span>
-              <span className="block mt-1 text-white">With Investor Capital</span>
+              <span className="mt-2 block text-blue-200">EV Infrastructure</span>
+              <span className="mt-1 block text-white">With Investor Capital</span>
             </h1>
             <p className="mt-8 max-w-3xl text-base leading-8 text-blue-100/80 sm:text-lg">
               ZipInvest is the marketplace where everyday investors own shares of
               revenue-generating EV charging infrastructure. We combine institutional-grade
-              asset selection with accessible, fractional participation â€” turning the
+              asset selection with accessible, fractional participation, turning the
               charging revolution into a tangible asset class.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -75,9 +74,8 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* Our Story */}
         <section id="story" className="mt-10">
-          <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 md:p-12 shadow-[0_30px_80px_rgba(10,23,56,0.4)]">
+          <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 shadow-[0_30px_80px_rgba(10,23,56,0.4)] md:p-12">
             <h2 className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">
               Our Story
             </h2>
@@ -86,19 +84,19 @@ function AboutUsPage() {
                 <p className="text-sm leading-7 text-blue-100/80">
                   India is adding millions of electric vehicles to its roads every year.
                   But the charging infrastructure that makes EV ownership practical is
-                  struggling to keep pace â€” not because of technology, but because of
+                  struggling to keep pace, not because of technology, but because of
                   capital.
                 </p>
                 <p className="text-sm leading-7 text-blue-100/80">
                   Zipbolt Innovations saw the gap. Traditional financing models leave
                   charging operators undercapitalized and investors without a clear path
-                  to Infrastructure exposure. ZipInvest was built to bridge that gap with
+                  to infrastructure exposure. ZipInvest was built to bridge that gap with
                   a model that works for both sides.
                 </p>
               </div>
               <div className="space-y-4">
                 <p className="text-sm leading-7 text-blue-100/80">
-                  We deploy battery-backed DC fast chargers at high-utilization sites â€”
+                  We deploy battery-backed DC fast chargers at high-utilization sites:
                   retail centers, logistics parks, highway plazas, and fleet depots.
                   Every charger is instrumented, monitored, and underwritten with
                   transparent performance data.
@@ -114,10 +112,9 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* Mission & Vision */}
         <section id="mission" className="mt-10">
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 md:p-10 shadow-[0_30px_80px_rgba(10,23,56,0.4)]">
+            <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 shadow-[0_30px_80px_rgba(10,23,56,0.4)] md:p-10">
               <div className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-200/70">
                 Mission
               </div>
@@ -131,7 +128,7 @@ function AboutUsPage() {
                 should have the opportunity to participate.
               </p>
             </div>
-            <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 md:p-10 shadow-[0_30px_80px_rgba(10,23,56,0.4)]">
+            <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 shadow-[0_30px_80px_rgba(10,23,56,0.4)] md:p-10">
               <div className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-200/70">
                 Vision
               </div>
@@ -141,14 +138,13 @@ function AboutUsPage() {
               </h2>
               <p className="mt-4 text-sm leading-7 text-blue-100/80">
                 A future where every EV driver has access to reliable, paid charging
-                â€” and where investors earn consistent returns from the backbone of
+                and where investors earn consistent returns from the backbone of
                 that network.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Stats */}
         <section id="stats" className="mt-10">
           <div className="mb-6">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700">
@@ -176,7 +172,6 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* Why ZipInvest */}
         <section id="why" className="mt-10">
           <div className="mb-6">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700">
@@ -206,7 +201,7 @@ function AboutUsPage() {
               {
                 icon: "&#9733;",
                 title: "Active Management",
-                desc: "We don&apos;t just pool capital â€” we manage deployment, maintenance, and operator relationships on your behalf.",
+                desc: "We don&apos;t just pool capital; we manage deployment, maintenance, and operator relationships on your behalf.",
               },
               {
                 icon: "&#9733;",
@@ -233,7 +228,6 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* Journey Timeline */}
         <section id="journey" className="mt-10">
           <div className="mb-6">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700">
@@ -247,7 +241,7 @@ function AboutUsPage() {
             {journeyMilestones.map((milestone, index) => (
               <div key={milestone.year} className="relative">
                 {index < journeyMilestones.length - 1 && (
-                  <div className="absolute top-6 left-[22px] right-0 hidden h-0.5 bg-[#dbe4ff] lg:block" />
+                  <div className="absolute left-[22px] right-0 top-6 hidden h-0.5 bg-[#dbe4ff] lg:block" />
                 )}
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#2a56c6] text-sm font-black text-white">
@@ -270,7 +264,6 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* Board of Advisors */}
         <section id="advisors" className="mt-10">
           <div className="mb-6">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700">
@@ -302,15 +295,14 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section id="cta" className="mt-10">
-          <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 md:p-14 text-center shadow-[0_30px_80px_rgba(10,23,56,0.4)]">
+          <div className="rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 text-center shadow-[0_30px_80px_rgba(10,23,56,0.4)] md:p-14">
             <h2 className="text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl">
               Ready to Own EV Infrastructure?
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-sm leading-8 text-blue-100/80">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-blue-100/80">
               Start exploring charger opportunities, model your returns in the simulator,
-              and deploy your allocation â€” all in minutes.
+              and deploy your allocation, all in minutes.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <a href="#marketplace" className="primary-button px-8 py-4 text-base">

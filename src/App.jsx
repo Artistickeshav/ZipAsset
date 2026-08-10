@@ -10,7 +10,21 @@ import AboutUsPage from "./components/AboutUsPage";
 import ContactPage from "./components/ContactPage";
 import FAQPage from "./components/FAQPage";
 import SegmentsPage from "./components/SegmentsPage";
-import { marketStats, marketplaceHighlights, segments, steps } from "./data/content";
+import BatteryStoragePage from "./components/BatteryStoragePage";
+import EvChargingPage from "./components/EvChargingPage";
+import EvPassengerFleetsPage from "./components/EvPassengerFleetsPage";
+import { marketStats, marketplaceHighlights, segments, steps, trustedCertifications } from "./data/content";
+import startupIndiaLogo from "./assets/startup-india-certified.png";
+import msmeRegisteredLogo from "./assets/msme-registered.jpg";
+import iso9001Logo from "./assets/iso-9001-certified.png";
+import iso14001Logo from "./assets/iso-14001-certified.png";
+
+const TRUST_ICONS = [
+  startupIndiaLogo,
+  msmeRegisteredLogo,
+  iso9001Logo,
+  iso14001Logo,
+];
 
 const getRouteFromHash = () => {
   const hash = window.location.hash.replace(/^#/, "");
@@ -37,6 +51,18 @@ const getRouteFromHash = () => {
 
   if (hash === "faq") {
     return { page: "faq", segmentId: null, anchor: null };
+  }
+
+  if (hash === "battery-storage") {
+    return { page: "battery-storage", segmentId: null, anchor: null };
+  }
+
+  if (hash === "ev-charging") {
+    return { page: "ev-charging", segmentId: null, anchor: null };
+  }
+
+  if (hash === "ev-passenger-fleets") {
+    return { page: "ev-passenger-fleets", segmentId: null, anchor: null };
   }
 
   return { page: "home", segmentId: null, anchor: hash || null };
@@ -115,6 +141,12 @@ function App() {
 
   const annualIncome = Math.round(investmentAmount * (selectedSegment.yieldRate / 100));
   const monthlyIncome = Math.round(annualIncome / 12);
+  const investorReasons = [
+    marketplaceHighlights[0],
+    marketplaceHighlights[1],
+    "Target yields up to 14% APY across segments with risk-adjusted participation options.",
+    "Sustainable mobility exposure built around real deployment, recurring revenue, and disciplined payouts.",
+  ];
 
   const handleOpenOpportunity = (segmentId) => {
     setSelectedSegmentId(segmentId);
@@ -158,6 +190,12 @@ function App() {
         <AboutUsPage />
       ) : route.page === "faq" ? (
         <FAQPage />
+      ) : route.page === "battery-storage" ? (
+        <BatteryStoragePage onBack={() => (window.location.hash = "segments")} />
+      ) : route.page === "ev-charging" ? (
+        <EvChargingPage onBack={() => (window.location.hash = "segments")} />
+      ) : route.page === "ev-passenger-fleets" ? (
+        <EvPassengerFleetsPage onBack={() => (window.location.hash = "segments")} />
       ) : (
       <main id="top" className="pb-12 pt-6 sm:pt-8">
         <div className="mx-auto w-[min(1480px,calc(100%-22px))] md:w-[min(1480px,calc(100%-32px))]">
@@ -184,7 +222,7 @@ function App() {
                   <a href="#calculator" className="primary-button hero-button-primary">
                     Get started
                   </a>
-                  <a href="#marketplace" className="secondary-button hero-button-secondary">
+                  <a href="#segments" className="secondary-button hero-button-secondary">
                     View opportunities
                   </a>
                 </div>
@@ -198,17 +236,17 @@ function App() {
                 <div className="hero-showcase-card hero-showcase-card-back" />
                 <div className="hero-showcase-card hero-showcase-card-mid" />
 
-                <div className="hero-showcase-front">
+                <div className="hero-showcase-front theme-shell">
                   <div className="flex items-center justify-between gap-3">
-                    <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#2a56c6]">
+                    <span className="theme-card-title text-xs font-semibold uppercase tracking-[0.3em]">
                       Network spotlight
                     </span>
-                    <span className="rounded-full border border-[#d7e2ff] bg-white px-3 py-1.5 text-xs font-semibold text-slate-600">
+                    <span className="theme-badge rounded-full px-3 py-1.5 text-xs font-semibold">
                       Live pool
                     </span>
                   </div>
 
-                  <div className="mt-6 rounded-[30px] bg-[#0a1738] p-6 text-white shadow-[0_24px_60px_rgba(10,23,56,0.32)]">
+                  <div className="theme-dark-card mt-6 rounded-[30px] p-6 text-white">
                     <div className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-200">
                       {spotlightSegment.power}
                     </div>
@@ -221,20 +259,20 @@ function App() {
 
                     <div className="mt-5 flex flex-wrap gap-2">
                       {spotlightSegment.features.slice(0, 3).map((feature) => (
-                        <span key={feature} className="rounded-full border border-white/12 bg-white/8 px-3 py-2 text-xs font-semibold text-blue-50">
+                        <span key={feature} className="theme-dark-pill rounded-full px-3 py-2 text-xs font-semibold">
                           {feature}
                         </span>
                       ))}
                     </div>
 
                     <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                      <div className="rounded-[24px] bg-white px-4 py-4 text-slate-950">
+                      <div className="theme-dark-metric rounded-[24px] px-4 py-4 text-slate-950">
                         <div className="text-sm font-semibold text-slate-500">Expected APY</div>
                         <div className="mt-1 text-3xl font-black tracking-[-0.04em]">
                           {spotlightSegment.yieldRate}%
                         </div>
                       </div>
-                      <div className="rounded-[24px] border border-white/12 bg-white/8 px-4 py-4">
+                      <div className="theme-dark-sidecard rounded-[24px] px-4 py-4">
                         <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">
                           Site type
                         </div>
@@ -251,8 +289,8 @@ function App() {
                           type="button"
                           className={`rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] transition ${
                             index === spotlightIndex
-                              ? "bg-[#2a56c6] text-white shadow-[0_16px_24px_rgba(42,86,198,0.24)]"
-                              : "bg-white text-slate-600 hover:-translate-y-0.5"
+                              ? "theme-dark-chip theme-dark-chip-active text-white"
+                              : "theme-dark-chip text-slate-100 hover:-translate-y-0.5"
                           }`}
                           onClick={() => setSpotlightIndex(index)}
                         >
@@ -270,21 +308,21 @@ function App() {
                 {marketStats.map((stat, index) => (
                   <div
                     key={stat.label}
-                    className="glass-card glass-card-compact animate-rise border-[#dbe4ff] bg-white"
+                    className="theme-stat-card glass-card glass-card-compact animate-rise"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="text-3xl font-black tracking-[-0.05em] text-[#0a1738]">
                       {stat.value}
                     </div>
-                    <div className="mt-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#5872b5]">
+                    <div className="theme-stat-label mt-2 text-xs font-semibold uppercase tracking-[0.28em]">
                       {stat.label}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="glass-card trusted-strip rounded-[30px] border-[#dbe4ff] bg-white p-5">
-                <div className="text-xs font-semibold uppercase tracking-[0.32em] text-[#2a56c6]">
+              <div className="theme-card glass-card trusted-strip rounded-[30px] p-5">
+                <div className="theme-card-title text-xs font-semibold uppercase tracking-[0.32em]">
                   Built for
                 </div>
                 <div className="trusted-slider mt-4">
@@ -357,6 +395,41 @@ function App() {
             />
           </section>
 
+          <section className="segments-trust-shell mt-10">
+            <div className="max-w-2xl">
+              <span
+                className="seg-section-accent"
+                style={{ backgroundImage: "linear-gradient(90deg, #2a56c6, #38bdf8)" }}
+              />
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#4d67a8]">
+                Trusted & Certified Platform
+              </p>
+              <h2 className="mt-2 text-3xl font-black tracking-[-0.04em] text-[#081327]">
+                Built on trust, backed by credentials
+              </h2>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {trustedCertifications.map((item, idx) => (
+                <article key={item} className="segments-trust-card">
+                  <div className="seg-trust-badge">
+                    <img 
+                      src={TRUST_ICONS[idx]} 
+                      alt={item}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <h3 className="text-base font-black tracking-[-0.03em] text-[#081327]">
+                    {item}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-slate-500">
+                    Verified certification for platform operations
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section id="marketplace" className="mt-10">
             <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
               <div>
@@ -384,8 +457,8 @@ function App() {
               <h3 className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-950">
                 Built for scalable clean energy and mobility assets
               </h3>
-              <div className="mt-6 space-y-4">
-                {marketplaceHighlights.map((item) => (
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {investorReasons.map((item) => (
                   <div
                     key={item}
                     className="rounded-[24px] border border-white/80 bg-white/80 p-4 text-sm leading-7 text-slate-600 shadow-[0_12px_28px_rgba(15,23,42,0.05)]"

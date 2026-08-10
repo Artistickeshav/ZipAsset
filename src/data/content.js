@@ -26,9 +26,18 @@ export const marketplaceHighlights = [
 ];
 
 export const steps = [
-  { title: "Browse", description: "Explore opportunities across charging networks, energy storage, and fleet infrastructure." },
-  { title: "Model", description: "Adjust your investment size to preview returns, risks, and lock-in periods." },
-  { title: "Deploy", description: "Invest in live assets backed by transparent underwriting and real-time monitoring." },
+  {
+    title: "Browse",
+    description: "Explore opportunities across charging networks, energy storage, and fleet infrastructure.",
+  },
+  {
+    title: "Model",
+    description: "Adjust your investment size to preview returns, risks, and lock-in periods.",
+  },
+  {
+    title: "Deploy",
+    description: "Invest in live assets backed by transparent underwriting and real-time monitoring.",
+  },
 ];
 
 export const segmentShowcaseStats = [
@@ -42,7 +51,7 @@ export const segmentShowcaseStats = [
 export const investyzSegmentsLive = [
   {
     id: "autonomous-maintenance-engines",
-    title: "Autonomous Maintenance Engines",
+    title: "Battery Energy Storage",
     category: "Battery Energy Storage",
     metric: "99% uptime for CPOs",
     tvl: "Rs 32.0M",
@@ -50,15 +59,26 @@ export const investyzSegmentsLive = [
     apy: "11.5%",
     accent: "from-emerald-400 via-cyan-300 to-blue-400",
     accentDark: "#10b981",
-    icon: "🔋",
+    icon: "BESS",
     image: bessSystemImage,
     description:
-      "Battery storage assets support chargers and grid capacity during peak demand windows, enabling higher uptime and reliable reserve power for charging networks.",
-    tags: ["Battery-Backed", "Reserve Power", "Grid Flex"],
+      "Support grid-scale battery storage systems that store renewable energy and stabilize power grids.",
+    tags: ["Grid Stabilization", "Peak Shaving", "Frequency Regulation", "Backup Power"],
+    details: {
+      title: "Inside Battery Energy Storage",
+      subtitle:
+        "Strategic energy storage systems that stabilize the grid, shave peak demand, and provide long-duration energy management for charging networks and industrial consumers.",
+      features: ["Grid Stabilization", "Peak Shaving", "Frequency Regulation", "Backup Power"],
+      snapshot: [
+        { label: "Lock Period", value: "90 days" },
+        { label: "Min. Investment", value: "Rs 10K" },
+        { label: "Risk Level", value: "Low" },
+      ],
+    },
   },
   {
     id: "zero-downtime-power-orchestration",
-    title: "Zero-Downtime Power Orchestration",
+    title: "EV DC Fast Charging",
     category: "EV DC Fast Charging",
     metric: "30% reduction in energy costs",
     tvl: "Rs 28.0M",
@@ -66,22 +86,22 @@ export const investyzSegmentsLive = [
     apy: "13.5%",
     accent: "from-blue-400 via-indigo-300 to-cyan-300",
     accentDark: "#2a56c6",
-    icon: "⚡",
+    icon: "EV",
     image: evDcFastChargingImage,
     description:
-      "Inside EV DC Fast Charging, rapid high-power stations deliver premium throughput and lower energy costs through intelligent load balancing and smart demand response.",
+      "Accelerate the electric vehicle revolution by investing in fast-charging infrastructure.",
+    tags: ["350kW Ultra-Fast", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
     details: {
       title: "Inside EV DC Fast Charging",
       subtitle:
         "High-power charging hubs are optimized for fast vehicle turnaround, energy cost savings, and intelligent demand response.",
-      features: ["Smart Load Balancing", "Ultra-Fast Throughput", "Peak Demand Management"],
+      features: ["350kW Ultra-Fast", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
       snapshot: [
-        { label: "Lock Period", value: "120 days" },
-        { label: "Min. Investment", value: "Rs 10K" },
-        { label: "Risk Level", value: "Medium" },
+        { label: "Lock Period", value: "30 days" },
+        { label: "Min. Investment", value: "Rs 150" },
+        { label: "Risk Level", value: "Low" },
       ],
     },
-    tags: ["Fast Charging", "Grid Aware", "Cost Optimized"],
   },
   {
     id: "self-balancing-grid",
@@ -93,7 +113,7 @@ export const investyzSegmentsLive = [
     apy: "12.0%",
     accent: "from-fuchsia-400 via-violet-300 to-blue-300",
     accentDark: "#a855f7",
-    icon: "🚗",
+    icon: "PF",
     image: evPassengerFleetImage,
     description:
       "Intelligent passenger fleet charging adapts schedules, routing, and charge cycles to maximize uptime while extending vehicle component life.",
@@ -109,7 +129,7 @@ export const investyzSegmentsLive = [
     apy: "14.0%",
     accent: "from-amber-400 via-orange-300 to-rose-300",
     accentDark: "#f59e0b",
-    icon: "🚛",
+    icon: "CF",
     image: evCargoFleetImage,
     description:
       "Cargo fleet planning links charging availability, route efficiency and delivery schedules to reduce idle time and maximise commercial utilization.",
@@ -124,7 +144,8 @@ export const investyzSegmentsUpcoming = [
     eyebrow: "Bidirectional Energy Flow",
     status: "Coming Soon",
     accentColor: "#06b6d4",
-    description: "Turn EV fleets into distributed grid assets — sell stored energy back during peak demand windows.",
+    description:
+      "Turn EV fleets into distributed grid assets and sell stored energy back during peak demand windows.",
   },
   {
     id: "green-hydrogen",
@@ -132,7 +153,8 @@ export const investyzSegmentsUpcoming = [
     eyebrow: "Next-Gen Clean Fuel",
     status: "On Roadmap",
     accentColor: "#8b5cf6",
-    description: "Infrastructure-backed investment in hydrogen fueling corridors for heavy commercial transport decarbonization.",
+    description:
+      "Infrastructure-backed investment in hydrogen fueling corridors for heavy commercial transport decarbonization.",
   },
 ];
 
@@ -141,28 +163,28 @@ export const segmentBenefits = [
     title: "High Yield Returns",
     stat: "14%",
     statLabel: "Max APY",
-    icon: "📈",
-    body: "Earn up to 14% APY across 4 live infrastructure segments — from EV fast charging to cargo fleet AI.",
+    icon: "APY",
+    body: "Earn up to 14% APY across 4 live infrastructure segments, from EV fast charging to cargo fleet AI.",
   },
   {
     title: "Real Asset Backing",
     stat: "Rs 190M+",
     statLabel: "Total TVL",
-    icon: "🏗️",
-    body: "Every token is backed by physical infrastructure — chargers, batteries, fleets — generating real revenue.",
+    icon: "RWA",
+    body: "Every token is backed by physical infrastructure including chargers, batteries, and fleets that generate real revenue.",
   },
   {
     title: "Carbon Neutral",
     stat: "50K+",
     statLabel: "Tons CO2 Offset",
-    icon: "🌿",
+    icon: "CO2",
     body: "Your investments power lower-emission infrastructure and accelerate India's sustainable mobility transition.",
   },
   {
     title: "Periodic Payouts",
     stat: "13K+",
     statLabel: "Active Investors",
-    icon: "💸",
+    icon: "PAY",
     body: "Receive rewards on flexible schedules including weekly, monthly, quarterly and annual distributions.",
   },
 ];
@@ -227,7 +249,8 @@ export const segments = [
     power: "6 kW",
     site: "Homes, apartment parking and workplace bays",
     useCase: "Overnight AC charging",
-    description: "A compact AC charger built for long-dwell parking where vehicles can charge gradually over several hours with a simpler electrical setup.",
+    description:
+      "A compact AC charger built for long-dwell parking where vehicles can charge gradually over several hours with a simpler electrical setup.",
     features: ["Easy wall-mount installation", "Ideal for overnight parking", "Low infrastructure load"],
     risk: "Low Risk",
     riskLevel: "Low",
@@ -248,7 +271,8 @@ export const segments = [
     power: "12 kW",
     site: "Hotels, offices and premium destination parking",
     useCase: "Destination AC charging",
-    description: "A higher-capacity AC charger suited to destination locations where drivers stay for multiple hours and operators want stronger daily throughput than entry AC setups.",
+    description:
+      "A higher-capacity AC charger suited to destination locations where drivers stay for multiple hours and operators want stronger daily throughput than entry AC setups.",
     features: ["Balanced AC power level", "Good fit for destination parking", "Lower capex than DC fast charging"],
     risk: "Low Risk",
     riskLevel: "Low",
@@ -269,7 +293,8 @@ export const segments = [
     power: "30 kW",
     site: "Retail parking, cafes and office parks",
     useCase: "Short dwell-time charging",
-    description: "Entry-level DC fast charging for daily commuter destinations where drivers need a quick top-up during errands or work hours.",
+    description:
+      "Entry-level DC fast charging for daily commuter destinations where drivers need a quick top-up during errands or work hours.",
     features: ["Compact install footprint", "Ideal for mixed-use sites", "Reliable for 2-3 vehicles per hour"],
     risk: "Low Risk",
     riskLevel: "Low",
@@ -290,7 +315,8 @@ export const segments = [
     power: "60 kW",
     site: "Shopping malls, hotels and commercial centers",
     useCase: "Peak-hour retail charging",
-    description: "A dependable fast charger for busy commercial sites with strong daytime traffic and consistent dwell times.",
+    description:
+      "A dependable fast charger for busy commercial sites with strong daytime traffic and consistent dwell times.",
     features: ["High utilization potential", "Fleet-ready support", "Fast installation turnaround"],
     risk: "Medium Risk",
     riskLevel: "Medium",
@@ -311,7 +337,8 @@ export const segments = [
     power: "120 kW",
     site: "Highway service plazas and premium city corridors",
     useCase: "Intercity travel charging",
-    description: "High-speed charging infrastructure designed for drivers on longer routes and premium urban corridors with high turnover.",
+    description:
+      "High-speed charging infrastructure designed for drivers on longer routes and premium urban corridors with high turnover.",
     features: ["Highway grade hardware", "Premium charging experience", "Ideal for 20-40 minute stops"],
     risk: "Medium Risk",
     riskLevel: "Medium",
@@ -332,7 +359,8 @@ export const segments = [
     power: "180 kW",
     site: "Travel hubs, logistics parks and destination stops",
     useCase: "High-demand travel corridors",
-    description: "Ultra-fast charging for high-traffic routes where throughput and uptime are critical to customer satisfaction.",
+    description:
+      "Ultra-fast charging for high-traffic routes where throughput and uptime are critical to customer satisfaction.",
     features: ["Ultra-fast charging", "Supports heavy traffic sites", "Advanced power management"],
     risk: "Medium Risk",
     riskLevel: "Medium",
@@ -353,7 +381,8 @@ export const segments = [
     power: "240 kW",
     site: "Anchor fleet depots and major destination hubs",
     useCase: "Heavy-duty fleet and premium charging",
-    description: "Flagship charging infrastructure built for major hubs where rapid turnover and premium service levels drive higher revenue potential.",
+    description:
+      "Flagship charging infrastructure built for major hubs where rapid turnover and premium service levels drive higher revenue potential.",
     features: ["Flagship charger class", "Fleet and highway ready", "Best-in-class throughput"],
     risk: "High Risk",
     riskLevel: "High",
@@ -374,7 +403,8 @@ export const segments = [
     power: "350 kW",
     site: "Regional transit corridors and next-gen charging plazas",
     useCase: "Future-ready highway infrastructure",
-    description: "A next-generation mega-fast charger for premium locations that are preparing for the next wave of electric mobility demand.",
+    description:
+      "A next-generation mega-fast charger for premium locations that are preparing for the next wave of electric mobility demand.",
     features: ["Mega-fast power delivery", "Future-ready deployment", "Designed for premium operator networks"],
     risk: "High Risk",
     riskLevel: "High",

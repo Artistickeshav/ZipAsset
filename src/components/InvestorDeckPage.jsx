@@ -21,9 +21,9 @@ function DeckSlide({ title, subtitle, children, accent = "brand" }) {
 
   return (
     <div
-      className={`relative rounded-[20px] border border-white/10 ${accentColors[accent] || accentColors.brand} p-8 md:p-12 shadow-[0_30px_80px_rgba(10,23,56,0.4)]`}
+      className={`relative rounded-[20px] border border-white/10 ${accentColors[accent] || accentColors.brand} p-8 shadow-[0_30px_80px_rgba(10,23,56,0.4)] md:p-12`}
     >
-      <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-[20px]" />
+      <div className="absolute bottom-0 left-0 top-0 w-1 rounded-l-[20px]" />
       <div className="ml-4">
         {title && (
           <h2 className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl md:text-4xl">
@@ -95,14 +95,14 @@ function InvestorDeckPage() {
 
   const slideComponents = [
     <Slide key="cover">
-      <div className="flex min-h-[65vh] flex-col items-center justify-center text-center rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 md:p-12 shadow-[0_30px_80px_rgba(10,23,56,0.4)]">
-        <div className="eyebrow-chip mb-6 inline-flex bg-white/10 border-white/20 text-blue-200">
+      <div className="flex min-h-[65vh] flex-col items-center justify-center rounded-[20px] border border-white/10 bg-gradient-to-br from-[#0a1738] via-[#0f1d4a] to-[#0a1738] p-8 text-center shadow-[0_30px_80px_rgba(10,23,56,0.4)] md:p-12">
+        <div className="eyebrow-chip mb-6 inline-flex border-white/20 bg-white/10 text-blue-200">
           Investor Deck
         </div>
         <h1 className="text-5xl font-black tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-[8rem]">
           <span className="block">ZipInvest</span>
-          <span className="block mt-2 text-blue-200">EV Charging</span>
-          <span className="block mt-1 text-white">Infrastructure</span>
+          <span className="mt-2 block text-blue-200">EV Charging</span>
+          <span className="mt-1 block text-white">Infrastructure</span>
         </h1>
         <p className="mt-8 max-w-2xl text-base leading-8 text-blue-100/80 sm:text-lg">
           Invest in revenue-generating EV charging assets across India&apos;s
@@ -143,7 +143,7 @@ function InvestorDeckPage() {
               India&apos;s EV market is projected to grow at over 40% CAGR through
               2030, driven by government incentives, fleet electrification, and
               rising fuel costs. Charging infrastructure is the critical backbone
-              â€” and the bottleneck.
+              and the bottleneck.
             </p>
             <p className="text-sm leading-7 text-blue-100/80">
               ZipInvest provides fractional access to high-utilization DC fast
@@ -287,7 +287,7 @@ function InvestorDeckPage() {
               {segments.map((segment) => (
                 <tr
                   key={segment.id}
-                  className="hover:bg-white/5 transition-colors"
+                  className="transition-colors hover:bg-white/5"
                 >
                   <td className="whitespace-nowrap px-5 py-3 font-semibold text-white">
                     {segment.name}
@@ -387,7 +387,7 @@ function InvestorDeckPage() {
               className="rounded-[16px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm"
             >
               <div className="flex items-start gap-3">
-                <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#2a56c6] text-white text-sm font-bold">
+                <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#2a56c6] text-sm font-bold text-white">
                   &#10003;
                 </div>
                 <p className="text-sm leading-7 text-blue-100/80">{item}</p>
@@ -504,11 +504,11 @@ function InvestorDeckPage() {
                 Legal Resources
               </div>
               <div className="mt-3 grid gap-2 text-sm">
-                <a href="/legal/terms-of-use.html" target="_blank" rel="noreferrer" className="text-blue-100/80 hover:text-white transition">Terms of Use</a>
-                <a href="/legal/privacy-policy.html" target="_blank" rel="noreferrer" className="text-blue-100/80 hover:text-white transition">Privacy Policy</a>
-                <a href="/legal/risk-disclosure.html" target="_blank" rel="noreferrer" className="text-blue-100/80 hover:text-white transition">Risk Disclosure</a>
-                <a href="/legal/kyc-aml-policy.html" target="_blank" rel="noreferrer" className="text-blue-100/80 hover:text-white transition">KYC / AML Policy</a>
-                <a href="/legal/investor-eligibility.html" target="_blank" rel="noreferrer" className="text-blue-100/80 hover:text-white transition">Investor Eligibility</a>
+                <a href="/legal/terms-of-use.html" target="_blank" rel="noreferrer" className="transition text-blue-100/80 hover:text-white">Terms of Use</a>
+                <a href="/legal/privacy-policy.html" target="_blank" rel="noreferrer" className="transition text-blue-100/80 hover:text-white">Privacy Policy</a>
+                <a href="/legal/risk-disclosure.html" target="_blank" rel="noreferrer" className="transition text-blue-100/80 hover:text-white">Risk Disclosure</a>
+                <a href="/legal/kyc-aml-policy.html" target="_blank" rel="noreferrer" className="transition text-blue-100/80 hover:text-white">KYC / AML Policy</a>
+                <a href="/legal/investor-eligibility.html" target="_blank" rel="noreferrer" className="transition text-blue-100/80 hover:text-white">Investor Eligibility</a>
               </div>
             </div>
           </div>
@@ -528,8 +528,7 @@ function InvestorDeckPage() {
   return (
     <main className="pb-12 pt-6 sm:pt-8">
       <div className="mx-auto w-[min(1480px,calc(100%-22px))] md:w-[min(1480px,calc(100%-32px))]">
-        {/* Slide indicator */}
-        <div className="sticky top-0 z-10 -mx-4 bg-[rgba(10,23,56,0.92)] backdrop-blur-xl border-b border-white/10 px-4 py-3 sm:mx-0 sm:rounded-none sm:border-none sm:p-4">
+        <div className="sticky top-0 z-10 -mx-4 border-b border-white/10 bg-[rgba(10,23,56,0.92)] px-4 py-3 backdrop-blur-xl sm:mx-0 sm:rounded-none sm:border-none sm:p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-200/70">
@@ -561,7 +560,6 @@ function InvestorDeckPage() {
               </button>
             </div>
           </div>
-          {/* Progress bar */}
           <div className="mt-3 h-1 overflow-hidden rounded-full bg-white/10">
             <div
               className="h-full rounded-full bg-gradient-to-r from-[#2a56c6] to-[#5f88f4] transition-all duration-500 ease-out"
@@ -570,12 +568,10 @@ function InvestorDeckPage() {
           </div>
         </div>
 
-        {/* Slide content */}
         <div className="mt-6" key={currentSlide}>
           {slideComponents[currentSlide]}
         </div>
 
-        {/* Slide dots */}
         <div className="mt-8 flex items-center justify-center gap-2">
           {Array.from({ length: totalSlides }).map((_, i) => (
             <button

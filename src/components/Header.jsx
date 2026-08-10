@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react";
 import { segments } from "../data/content";
+import { isClerkEnabled } from "../config/clerk";
 import BrandLogo from "./BrandLogo";
 
 const navItems = [
@@ -59,6 +60,74 @@ function Header() {
     setIsMobileMenuOpen(false);
     setIsMarketplaceOpen(false);
   };
+
+  const desktopAuth = isClerkEnabled ? (
+    <>
+      <Show when="signed-out">
+        <SignInButton mode="modal">
+          <button type="button" className="secondary-button !px-5 !py-3">
+            Login
+          </button>
+        </SignInButton>
+        <SignUpButton mode="modal">
+          <button type="button" className="primary-button !px-5 !py-3">
+            Sign Up
+          </button>
+        </SignUpButton>
+      </Show>
+      <Show when="signed-in">
+        <div className="rounded-full border border-white/12 bg-white/8 p-1">
+          <UserButton
+            appearance={{
+              elements: {
+                userButtonAvatarBox: "h-10 w-10",
+              },
+            }}
+          />
+        </div>
+      </Show>
+    </>
+  ) : null;
+
+  const mobileAuth = isClerkEnabled ? (
+    <>
+      <Show when="signed-out">
+        <SignInButton mode="modal">
+          <button
+            type="button"
+            onClick={handleNav}
+            className="secondary-button !w-full !justify-center !px-5 !py-3"
+          >
+            Login
+          </button>
+        </SignInButton>
+        <SignUpButton mode="modal">
+          <button
+            type="button"
+            onClick={handleNav}
+            className="primary-button !w-full !justify-center !px-5 !py-3"
+          >
+            Sign Up
+          </button>
+        </SignUpButton>
+      </Show>
+      <Show when="signed-in">
+        <div className="flex justify-center pt-2">
+          <UserButton
+            appearance={{
+              elements: {
+                userButtonAvatarBox: "h-11 w-11",
+              },
+            }}
+          />
+        </div>
+      </Show>
+    </>
+  ) : (
+    <p className="text-center text-sm text-blue-100/70">
+      Login will appear after Clerk is configured in production.
+    </p>
+  );
 
   return (
     <header className="sticky top-0 z-20 border-b border-white/10 bg-[rgba(10,23,56,0.88)] backdrop-blur-xl">
@@ -144,29 +213,7 @@ function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Show when="signed-out">
-            <SignInButton mode="modal">
-              <button type="button" className="secondary-button !px-5 !py-3">
-                Login
-              </button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button type="button" className="primary-button !px-5 !py-3">
-                Sign Up
-              </button>
-            </SignUpButton>
-          </Show>
-          <Show when="signed-in">
-            <div className="rounded-full border border-white/12 bg-white/8 p-1">
-              <UserButton
-                appearance={{
-                  elements: {
-                    userButtonAvatarBox: "h-10 w-10",
-                  },
-                }}
-              />
-            </div>
-          </Show>
+          {desktopAuth}
         </div>
 
         <button
@@ -248,37 +295,7 @@ function Header() {
           </nav>
 
           <div className="mt-4 flex flex-col gap-3 border-t border-white/10 pt-4">
-            <Show when="signed-out">
-              <SignInButton mode="modal">
-                <button
-                  type="button"
-                  onClick={handleNav}
-                  className="secondary-button !w-full !justify-center !px-5 !py-3"
-                >
-                  Login
-                </button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <button
-                  type="button"
-                  onClick={handleNav}
-                  className="primary-button !w-full !justify-center !px-5 !py-3"
-                >
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </Show>
-            <Show when="signed-in">
-              <div className="flex justify-center pt-2">
-                <UserButton
-                  appearance={{
-                    elements: {
-                      userButtonAvatarBox: "h-11 w-11",
-                    },
-                  }}
-                />
-              </div>
-            </Show>
+            {mobileAuth}
           </div>
         </div>
       </div>
