@@ -31,7 +31,7 @@
 - [x] Added #aboutus route to App.jsx
 - [x] Updated Header.jsx About Us link to #aboutus
 - [x] Updated Footer.jsx Platform section include About Us link
-- [x] Removed sticky navigation, arrow keys hint, About ZipInvest label
+- [x] Removed sticky navigation, arrow keys hint, About ZipAsset label
 
 ## FAQ Page
 - [x] Create src/components/FAQPage.jsx with 10 functional FAQ items

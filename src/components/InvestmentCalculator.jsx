@@ -197,7 +197,7 @@ function InvestmentCalculator({
             </div>
 
             <button className="primary-button mt-8 w-full justify-center px-6 py-5 text-[1.05rem]">
-              Sign in to invest
+              Complete KYC first, then proceed to payments
             </button>
 
             <p className="mt-5 text-center text-sm text-slate-500">

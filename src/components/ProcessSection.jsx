@@ -4,7 +4,7 @@ function ProcessSection({ processSteps }) {
   return (
     <Section
       id="how-it-works"
-      title="How ZipInvest works"
+      title="How ZipAsset works"
       description="A streamlined investor journey across all segments: browse opportunities, model your returns, review risk profiles, and deploy capital into live assets."
     >
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

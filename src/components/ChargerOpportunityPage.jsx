@@ -23,9 +23,9 @@ function ChargerOpportunityPage({ segment, onBackToMarketplace, onOpenSimulator 
   const annualReturn = (amount) => Math.round(amount * (segment.yieldRate / 100));
 
   return (
-    <main className="pb-12 pt-6 sm:pt-8">
-      <div className="mx-auto w-[min(1480px,calc(100%-22px))] md:w-[min(1480px,calc(100%-32px))]">
-        <section className="hero-panel hero-panel-zip overflow-visible lg:p-8">
+    <main className="pb-10 pt-4 sm:pt-6 md:pt-8">
+      <div className="mx-auto w-[min(1480px,calc(100%-16px))] sm:w-[min(1480px,calc(100%-24px))] md:w-[min(1480px,calc(100%-32px))]">
+        <section className="hero-panel hero-panel-zip overflow-visible p-4 sm:p-6 lg:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <button
               type="button"
@@ -39,15 +39,15 @@ function ChargerOpportunityPage({ segment, onBackToMarketplace, onOpenSimulator 
             </div>
           </div>
 
-          <div className="mt-6 grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <div className="mt-4 grid gap-6 sm:mt-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
             <div>
               <div className="eyebrow-chip bg-white text-[#0a1738]">
                 {segment.power} • {segment.useCase}
               </div>
-              <h1 className="mt-5 max-w-4xl text-4xl font-bold tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-[4.6rem]">
+              <h1 className="mt-4 max-w-4xl text-3xl font-bold tracking-[-0.05em] text-slate-950 sm:text-4xl sm:mt-5 lg:text-[4.6rem]">
                 {segment.name}
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8 sm:mt-5 md:text-lg">
                 {segment.description}
               </p>
 
@@ -77,13 +77,13 @@ function ChargerOpportunityPage({ segment, onBackToMarketplace, onOpenSimulator 
               </div>
             </div>
 
-            <div className="glass-card rounded-[32px] p-5">
-              <div className="relative overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#fdfefe_0%,#eef4ff_100%)]">
+            <div className="glass-card rounded-[26px] p-4 sm:rounded-[32px] sm:p-5">
+              <div className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(180deg,#fdfefe_0%,#eef4ff_100%)] sm:rounded-[28px]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.72),transparent_30%),radial-gradient(circle_at_bottom,rgba(42,86,198,0.1),transparent_42%)]" />
                 <img
                   src={segment.image}
                   alt={segment.name}
-                  className="relative z-10 mx-auto h-[22rem] w-full object-contain p-6 sm:h-[24rem]"
+                  className="relative z-10 mx-auto h-[16rem] w-full object-contain p-4 sm:h-[20rem] sm:p-6 md:h-[24rem]"
                 />
               </div>
 
@@ -125,7 +125,7 @@ function ChargerOpportunityPage({ segment, onBackToMarketplace, onOpenSimulator 
           </div>
         </section>
 
-        <section className="mt-8 grid gap-6 lg:grid-cols-[1fr_0.96fr]">
+        <section className="mt-6 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-[1fr_0.96fr]">
           <div className="glass-card rounded-[30px] p-6">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">
               Opportunity context
@@ -147,7 +147,7 @@ function ChargerOpportunityPage({ segment, onBackToMarketplace, onOpenSimulator 
                 <p className="mt-2 text-sm leading-7 text-slate-600">
                   The current modeled profile targets <strong>{segment.yieldRate}% APY</strong> with
                   a <strong>{segment.lockDays}-day</strong> lock period, positioning this charger in the
-                  <strong> {segment.riskLevel.toLowerCase()}</strong> risk bucket used on ZipInvest.
+                  <strong> {segment.riskLevel.toLowerCase()}</strong> risk bucket used on ZipAsset.
                 </p>
               </div>
             </div>
@@ -220,7 +220,7 @@ function ChargerOpportunityPage({ segment, onBackToMarketplace, onOpenSimulator 
             <h2 className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-950">
               What could affect outcomes
             </h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid gap-3 sm:mt-5 sm:grid-cols-2 lg:grid-cols-3">
               {segment.riskDrivers.map((item) => (
                 <div key={item} className="rounded-[24px] border border-white/80 bg-white/80 p-4 text-sm leading-7 text-slate-600 shadow-[0_12px_28px_rgba(15,23,42,0.05)]">
                   {item}

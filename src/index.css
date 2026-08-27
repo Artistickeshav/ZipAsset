@@ -1520,36 +1520,227 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ─────────────────────────────────────────
-   RESPONSIVE
+   RESPONSIVE — MOBILE FIRST (320 → 1536px)
+   Breakpoints: xs 320, sm 480, md 640, lg 768, xl 1024, 2xl 1280
 ───────────────────────────────────────── */
-@media (max-width: 768px) {
+
+/* ── xs: 320–479px ─────────────────────── */
+@media (max-width: 479px) {
+  /* Fluid type scale */
+  html { font-size: 15px; }
+
+  /* App background orbs — shrink on small screens */
+  .app-orb-a { width: 14rem; height: 14rem; left: -2rem; }
+  .app-orb-b { width: 16rem; height: 16rem; right: -3rem; }
+  .app-orb-c { width: 12rem; height: 12rem; }
+
+  /* Hero panel */
+  .hero-panel { border-radius: 20px; padding: 1.25rem; }
+  .hero-panel-zip { border-radius: 20px; }
+
+  /* Hero title — fluid clamp on tiny screens */
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 2.6rem) !important;
+    letter-spacing: -0.04em !important;
+  }
+  .hero-subtitle { font-size: 0.95rem !important; }
+
+  /* Hero showcase — hide decorative behind cards on tiny screens */
+  .hero-showcase { padding: 0; margin-top: 1.5rem; }
+  .hero-showcase-card-back { display: none; }
+  .hero-showcase-card-mid { display: none; }
+  .hero-showcase-front { border-radius: 22px; padding: 1.1rem; }
+
+  /* Buttons — full width on tiny */
+  .hero-cta-row { flex-direction: column; }
+  .hero-cta-row .primary-button,
+  .hero-cta-row .secondary-button { width: 100%; justify-content: center; }
+  .primary-button, .secondary-button { padding: 0.75rem 1.25rem; font-size: 0.85rem; min-height: 48px; }
+
+  /* Trusted strip */
+  .trusted-strip { display: none; }
+  .trusted-slider-track { animation-duration: 16s; }
+
+  /* Stat cards — 2 columns */
+  .glass-card-compact { border-radius: 18px; padding: 0.85rem; }
+
+  /* Calculator */
+  .calculator-panel { border-radius: 22px; }
+  .calculator-toggle { padding: 1.1rem 1.1rem 0.75rem; }
+  .calculator-toggle-main { flex-direction: column; gap: 0.75rem; }
+  .calculator-toggle-action { align-self: flex-start; }
+  .calculator-summary-grid { grid-template-columns: 1fr; }
+  .calculator-content-inner { padding: 0 1rem 1rem; }
+
+  /* Marketplace listing cards */
+  .mkt-listing-card { border-radius: 20px; }
+  .mkt-img-container { height: 10rem; }
+
+  /* Segment hero */
+  .segments-hero { border-radius: 20px; padding: 1.25rem; }
+  .seg-tab-bar { flex-wrap: wrap; width: 100%; justify-content: center; }
+  .seg-tab { font-size: 0.7rem; padding: 0.45rem 0.85rem; }
+  .segments-live-card { border-radius: 20px; padding: 1.1rem; }
+  .seg-metric-block { grid-template-columns: 1fr; gap: 0.5rem; }
+  .seg-upcoming-card { border-radius: 20px; padding: 1.25rem; }
+
+  /* Process & flow */
+  .process-step { border-radius: 18px; }
+  .seg-flow-number { font-size: 2.5rem; }
+  .seg-stat-counter { font-size: 1.5rem; }
+
+  /* Sections */
+  .segments-stats-shell, .segments-flow-shell,
+  .segments-trust-shell, .segments-process-shell { border-radius: 20px; padding: 1.25rem; }
+  .segments-benefits-shell { border-radius: 20px; padding: 1.25rem; }
+
+  /* Trust badge */
+  .seg-trust-badge { height: 80px; width: 80px; }
+
+  /* Hero copy glow */
+  .hero-copy::before { left: -1rem; top: -1rem; width: 6rem; height: 6rem; }
+
+  /* Footer */
+  footer .grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── sm: 480–639px ──────────────────────── */
+@media (min-width: 480px) and (max-width: 639px) {
+  html { font-size: 15.5px; }
+
+  .hero-panel { border-radius: 24px; padding: 1.5rem; }
+  .hero-title { font-size: clamp(2.4rem, 9vw, 3rem) !important; }
+
+  .hero-showcase { padding: 0; margin-top: 1.5rem; }
+  .hero-showcase-card-back { opacity: 0.5; }
+
+  .trusted-strip { display: none; }
+  .trusted-slider-track { animation-duration: 18s; }
+
+  .calculator-summary-grid { grid-template-columns: 1fr 1fr; }
+  .calculator-toggle-main { flex-direction: column; gap: 0.75rem; }
+
+  .seg-metric-block { grid-template-columns: 1fr 1fr; }
+  .mkt-img-container { height: 11rem; }
+
+  .hero-cta-row .primary-button,
+  .hero-cta-row .secondary-button { width: auto; }
+}
+
+/* ── md: 640–767px ──────────────────────── */
+@media (min-width: 640px) and (max-width: 767px) {
+  .calculator-summary-grid { grid-template-columns: 1.35fr 1fr 1fr; }
+
+  .hero-title { font-size: clamp(2.8rem, 8vw, 3.5rem) !important; }
+
+  .hero-showcase { margin-top: 2rem; }
+  .hero-showcase-card-back, .hero-showcase-card-mid { opacity: 0.6; }
+
+  .trusted-strip { display: block; }
+
+  .mkt-img-container { height: 13rem; }
+  .seg-metric-block { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── lg: 768px and below — general resets ── */
+@media (max-width: 767px) {
+  /* Rounded corners */
   .hero-panel, .spotlight-shell, .feature-card, .process-panel,
   .segments-hero, .segments-stats-shell, .segments-roadmap-shell,
   .segments-flow-shell, .segments-trust-shell, .segments-process-shell,
-  .segments-live-card, .segments-benefits-shell { border-radius: 24px; }
+  .segments-live-card, .segments-benefits-shell,
+  .glass-card { border-radius: 22px; }
 
+  /* Layout stacking */
   .hero-showcase { padding-left: 0; }
   .hero-showcase-card { inset: 1.6rem 0 0 1rem; }
-  .trusted-slider-track { animation-duration: 22s; }
-  .hero-copy::before { left: -1.5rem; width: 8rem; height: 8rem; }
+
+  /* Calculator */
   .calculator-toggle-main { flex-direction: column; }
   .calculator-toggle-action { align-self: flex-start; }
-  .segments-hero-image { min-height: 320px; }
-  .segments-hero-floating-card {
-    left: 1rem;
-    right: 1rem;
-    max-width: none;
-  }
+
+  /* Segments image */
+  .segments-hero-image { min-height: 260px; }
+  .segments-hero-floating-card { left: 1rem; right: 1rem; max-width: none; }
   .segments-hero-floating-card-top { top: 1rem; }
   .segments-hero-floating-card-bottom { bottom: 1rem; }
+
+  /* Marketplace grid — single column */
+  .mkt-filter-bar { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.35rem; }
+  .mkt-filter-pill { flex-shrink: 0; white-space: nowrap; min-height: 44px; }
+
+  /* Touch targets */
+  .primary-button, .secondary-button { min-height: 48px; }
+  .seg-tab { min-height: 40px; }
 }
 
-@media (min-width: 640px) {
+/* ── xl: 768–1023px tablet landscape ───── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-title { font-size: clamp(3.2rem, 6.5vw, 4.5rem) !important; }
+  .hero-panel { border-radius: 32px; padding: 1.75rem; }
+
+  /* Showcase card — slight reduce */
+  .hero-showcase-card-back { transform: rotate(8deg); }
+  .hero-showcase-card-mid { transform: rotate(4deg); }
+
+  /* Calculator grid – single column until xl */
   .calculator-summary-grid { grid-template-columns: 1.35fr 1fr 1fr; }
+
+  /* Trusted strip visible */
+  .trusted-strip { display: block; }
+  .trusted-slider-track { animation-duration: 20s; }
+
+  /* Marketplace — 2 columns */
+  .mkt-img-container { height: 14rem; }
+
+  /* Segment cards grid becomes 2 col */
+  .segments-hero { border-radius: 32px; }
+  .segments-hero-layout { grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr); }
 }
 
+/* ── 2xl: 1024px+ desktop ───────────────── */
 @media (min-width: 1024px) {
   .segments-hero-layout {
     grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
   }
+
+  .calculator-summary-grid { grid-template-columns: 1.35fr 1fr 1fr; }
+
+  .hero-showcase { padding-left: 1.25rem; }
+  .hero-showcase-card { inset: 2rem 0 0 2.25rem; }
+  .hero-showcase-card-back { display: block; transform: rotate(11deg); }
+  .hero-showcase-card-mid { display: block; transform: rotate(5.5deg); }
 }
+
+/* ── 3xl: 1280px+ large desktop ─────────── */
+@media (min-width: 1280px) {
+  .hero-title { font-size: 5.5rem !important; }
+  .trusted-slider-track { animation-duration: 18s; }
+}
+
+/* ── 4xl: 1536px+ ultra wide ─────────────── */
+@media (min-width: 1536px) {
+  .hero-title { font-size: 6rem !important; }
+  .app-orb-a { width: 28rem; height: 28rem; }
+  .app-orb-b { width: 32rem; height: 32rem; }
+}
+
+/* ── Fluid container padding ─────────────── */
+@media (max-width: 479px) {
+  main > div, .page-container { padding-left: 0 !important; padding-right: 0 !important; }
+}
+
+/* ── Reduce animations on slow devices ────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-line, .hero-subtitle, .hero-cta-row,
+  .hero-kicker, .animate-rise, .reveal, .reveal-stagger > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .trusted-slider-track { animation-play-state: paused; }
+  .app-orb { animation: none; }
+  .hero-copy::before { animation: none; }
+  .segments-orbit { animation: none; }
+}
+
