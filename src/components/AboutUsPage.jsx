@@ -42,7 +42,7 @@ function AboutUsPage() {
   const journeyMilestones = [
     { year: "2022", title: "Founded", desc: "Zipbolt Innovations was established with a vision to democratize EV infrastructure investment." },
     { year: "2023", title: "First Deployments", desc: "Launched our first 6 kW AC and 60 kW retail charging sites across Gurugram and Delhi NCR." },
-    { year: "2024", title: "Platform Launch", desc: "ZipInvest marketplace went live, enabling fractional investment in charging assets." },
+    { year: "2024", title: "Platform Launch", desc: "ZipAsset marketplace went live, enabling fractional investment in charging assets." },
     { year: "2025", title: "Scaling", desc: "Expanded to 8 charger classes covering retail, fleet, and highway corridors nationwide." },
     { year: "2026", title: "Growing Investor Base", desc: "Empowering retail and institutional investors to own revenue-generating EV infrastructure." },
   ];
@@ -58,7 +58,7 @@ function AboutUsPage() {
               <span className="mt-1 block text-white">With Investor Capital</span>
             </h1>
             <p className="mt-8 max-w-3xl text-base leading-8 text-blue-100/80 sm:text-lg">
-              ZipInvest is the marketplace where everyday investors own shares of
+              ZipAsset is the marketplace where everyday investors own shares of
               revenue-generating EV charging infrastructure. We combine institutional-grade
               asset selection with accessible, fractional participation, turning the
               charging revolution into a tangible asset class.
@@ -90,7 +90,7 @@ function AboutUsPage() {
                 <p className="text-sm leading-7 text-blue-100/80">
                   Zipbolt Innovations saw the gap. Traditional financing models leave
                   charging operators undercapitalized and investors without a clear path
-                  to infrastructure exposure. ZipInvest was built to bridge that gap with
+                  to infrastructure exposure. ZipAsset was built to bridge that gap with
                   a model that works for both sides.
                 </p>
               </div>
@@ -102,7 +102,7 @@ function AboutUsPage() {
                   transparent performance data.
                 </p>
                 <p className="text-sm leading-7 text-blue-100/80">
-                  Today, ZipInvest offers eight charger classes ranging from entry-level
+                  Today, ZipAsset offers eight charger classes ranging from entry-level
                   AC installations to flagship mega-fast stations, each priced for
                   fractional ownership with clear return profiles and defined risk
                   tiers.
@@ -178,7 +178,7 @@ function AboutUsPage() {
               Platform Pillars
             </p>
             <h2 className="mt-1 text-2xl font-black tracking-[-0.03em] text-slate-950">
-              Why Investors Choose ZipInvest
+              Why Investors Choose ZipAsset
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

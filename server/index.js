@@ -44,7 +44,7 @@ app.post("/api/contact", async (req, res) => {
     html: `
       <div style="font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #0a1738;">
         <h2 style="color: #2a56c6; margin-bottom: 8px;">New Contact Form Submission</h2>
-        <p style="color: #5b6475; margin-bottom: 24px;">You received a new message from the ZipInvest website contact form.</p>
+        <p style="color: #5b6475; margin-bottom: 24px;">You received a new message from the ZipAsset website contact form.</p>
 
         <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
           <tr>
@@ -78,7 +78,7 @@ app.post("/api/contact", async (req, res) => {
         </div>
 
         <p style="margin-top: 24px; font-size: 12px; color: #94a3b8;">
-          This message was sent via the ZipInvest contact form.
+          This message was sent via the ZipAsset contact form.
         </p>
       </div>
     `,

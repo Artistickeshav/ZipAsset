@@ -12,7 +12,7 @@ function Hero() {
             Invest in the buildout of EV charging.
           </h1>
           <p className="mt-5 max-w-[58ch] text-base leading-7 text-emerald-100/85 md:text-[1.05rem]">
-            ZipInvest is a concept platform for backing different kinds of EV DC fast-charging
+            ZipAsset is a concept platform for backing different kinds of EV DC fast-charging
             assets, from highway charging hubs to fleet depots and battery-backed urban stations,
             while keeping the bold green-first theme from your attached EV design.
           </p>

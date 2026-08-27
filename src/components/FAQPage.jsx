@@ -3,12 +3,12 @@ import { useState } from "react";
 function FAQPage() {
   const faqs = [
     {
-      q: "What is ZipInvest?",
-      a: "ZipInvest is a marketplace-style platform for investing in clean energy and mobility infrastructure across four key segments: EV DC fast charging, battery energy storage, passenger fleets, and cargo logistics. You can own fractional shares of revenue-generating infrastructure assets with clear return profiles.",
+      q: "What is ZipAsset?",
+      a: "ZipAsset is a marketplace-style platform for investing in clean energy and mobility infrastructure across four key segments: EV DC fast charging, battery energy storage, passenger fleets, and cargo logistics. You can own fractional shares of revenue-generating infrastructure assets with clear return profiles.",
     },
     {
       q: "What segments can I invest in?",
-      a: "ZipInvest offers four investment segments: (1) EV DC Fast Charging - high-utilization chargers across retail, fleet, and highway corridors; (2) Battery Energy Storage (BESS) - strategic energy storage systems; (3) EV Passenger Fleets - intelligent fleet charging and optimization; (4) EV Cargo Fleets - commercial logistics infrastructure. Each segment has distinct risk-return profiles and deployment characteristics.",
+      a: "ZipAsset offers four investment segments: (1) EV DC Fast Charging - high-utilization chargers across retail, fleet, and highway corridors; (2) Battery Energy Storage (BESS) - strategic energy storage systems; (3) EV Passenger Fleets - intelligent fleet charging and optimization; (4) EV Cargo Fleets - commercial logistics infrastructure. Each segment has distinct risk-return profiles and deployment characteristics.",
     },
     {
       q: "How does fractional investment work?",
@@ -35,12 +35,12 @@ function FAQPage() {
       a: "Every investment is backed by physical infrastructure deployed at a specific location with real host-site contracts and transparent performance monitoring. However, as with any infrastructure investment, there are inherent risks including utilization variability, operational dependencies, and market conditions. Review our Risk Disclosure before investing.",
     },
     {
-      q: "Who is ZipInvest for?",
-      a: "ZipInvest is designed for retail investors, fleet operators, infrastructure partners, and institutional investors seeking asset-backed exposure to India's clean energy and mobility transition. Tickets start at Rs 1,500, making fractional ownership of critical infrastructure accessible to a wide range of investors.",
+      q: "Who is ZipAsset for?",
+      a: "ZipAsset is designed for retail investors, fleet operators, infrastructure partners, and institutional investors seeking asset-backed exposure to India's clean energy and mobility transition. Tickets start at Rs 1,500, making fractional ownership of critical infrastructure accessible to a wide range of investors.",
     },
     {
       q: "What are the payment methods accepted?",
-      a: "ZipInvest supports multiple payment modes. Specific payment details are provided at the checkout stage within the investment studio. All transactions are processed through secure payment gateways.",
+      a: "ZipAsset supports multiple payment modes. Specific payment details are provided at the checkout stage within the investment studio. All transactions are processed through secure payment gateways.",
     },
     {
       q: "How do I get support?",
@@ -67,7 +67,7 @@ function FAQPage() {
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
               Everything you need to know about investing in EV charging
-              infrastructure with ZipInvest.
+              infrastructure with ZipAsset.
             </p>
           </div>
 

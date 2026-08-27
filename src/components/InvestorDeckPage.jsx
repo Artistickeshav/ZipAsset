@@ -100,7 +100,7 @@ function InvestorDeckPage() {
           Investor Deck
         </div>
         <h1 className="text-5xl font-black tracking-[-0.05em] text-white sm:text-6xl md:text-7xl lg:text-[8rem]">
-          <span className="block">ZipInvest</span>
+          <span className="block">ZipAsset</span>
           <span className="mt-2 block text-blue-200">EV Charging</span>
           <span className="mt-1 block text-white">Infrastructure</span>
         </h1>
@@ -146,7 +146,7 @@ function InvestorDeckPage() {
               and the bottleneck.
             </p>
             <p className="text-sm leading-7 text-blue-100/80">
-              ZipInvest provides fractional access to high-utilization DC fast
+              ZipAsset provides fractional access to high-utilization DC fast
               charging assets deployed across retail, fleet, and highway
               corridors. Every charger is backed by real site contracts,
               deployed hardware, and transparent performance monitoring.
@@ -181,7 +181,7 @@ function InvestorDeckPage() {
     <Slide key="market">
       <DeckSlide
         title="Market Overview"
-        subtitle="Key metrics from the ZipInvest charging network"
+        subtitle="Key metrics from the ZipAsset charging network"
         accent="cyan"
       >
         <StatGrid stats={marketStats} />
@@ -376,7 +376,7 @@ function InvestorDeckPage() {
 
     <Slide key="why">
       <DeckSlide
-        title="Why ZipInvest"
+        title="Why ZipAsset"
         subtitle="Platform differentiators that matter for infrastructure investors"
         accent="brand"
       >
@@ -480,7 +480,7 @@ function InvestorDeckPage() {
               </div>
               <div className="mt-3 space-y-2 text-sm text-blue-100/80">
                 <p>info@zip-bolt.com</p>
-                <p>ZipInvest, a product of Zipbolt Innovations Pvt Ltd</p>
+                <p>ZipAsset, a product of Zipbolt Innovations Pvt Ltd</p>
                 <p>UG-006, Ground Floor</p>
                 <p>MGF Metropolis Mall, Mehrauli - Gurgaon Road</p>
                 <p>Gurugram, Haryana 122002, India</p>

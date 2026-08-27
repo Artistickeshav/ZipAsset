@@ -6,7 +6,7 @@ function OpportunitySection() {
   return (
     <Section
       id="opportunity"
-      title="Why ZipInvest can feel credible to users"
+      title="Why ZipAsset can feel credible to users"
       description="A strong EV infrastructure platform needs more than charger cards. It needs an operating story around throughput, uptime, energy margins, and deployment discipline."
     >
       <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr]">

@@ -42,9 +42,9 @@ function Footer() {
   ];
 
   return (
-    <footer className="mt-12 border-t border-white/10 bg-[#0a1738] text-white">
-      <div className="mx-auto w-[min(1180px,calc(100%-22px))] py-12 md:w-[min(1180px,calc(100%-32px))]">
-        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.7fr_0.7fr_0.8fr_1fr]">
+    <footer className="mt-10 border-t border-white/10 bg-[#0a1738] text-white sm:mt-12">
+      <div className="mx-auto w-[min(1180px,calc(100%-16px))] py-8 sm:w-[min(1180px,calc(100%-24px))] sm:py-10 md:w-[min(1180px,calc(100%-32px))] md:py-12">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.15fr_0.7fr_0.7fr_0.8fr_1fr]">
           <div>
             <div className="flex items-center gap-4">
               <BrandLogo imgClassName="h-11 sm:h-12 md:h-14 drop-shadow-[0_10px_22px_rgba(34,211,238,0.14)]" />
@@ -170,7 +170,7 @@ function Footer() {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-blue-100/60">
-          <p>&copy; 2026 ZipInvest, a product of Zipbolt Innovations Pvt Ltd.</p>
+          <p>&copy; 2026 ZipAsset, a product of Zipbolt Innovations Pvt Ltd.</p>
           <div className="flex flex-wrap gap-4">
             <a className="transition hover:text-white" href="#top">
               Back to top
