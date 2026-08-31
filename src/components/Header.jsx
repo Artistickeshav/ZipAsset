@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/react";
-import { segments } from "../data/content";
 import { isClerkEnabled } from "../config/clerk";
 import BrandLogo from "./BrandLogo";
 
@@ -19,10 +18,9 @@ const chargerMenuLabels = {
   "charger-120kw": "120 kW Highway",
   "charger-180kw": "180 kW Travel",
   "charger-240kw": "240 kW Fleet",
-  "charger-350kw": "350 kW Mega",
 };
 
-function Header() {
+function Header({ marketplaceSegments }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMarketplaceOpen, setIsMarketplaceOpen] = useState(false);
   const menuRef = useRef(null);
@@ -185,7 +183,7 @@ function Header() {
                   </div>
                 </div>
                 <div className="max-h-[360px] overflow-y-auto p-2">
-                  {segments.map((segment) => (
+                  {marketplaceSegments.map((segment) => (
                     <a
                       key={segment.id}
                       href={`#charger/${segment.id}`}
@@ -269,7 +267,7 @@ function Header() {
                 </span>
               </div>
               <div className="mt-3 flex flex-col gap-1 border-t border-white/10 pt-3">
-                {segments.map((segment) => (
+                {marketplaceSegments.map((segment) => (
                   <a
                     key={segment.id}
                     href={`#charger/${segment.id}`}

@@ -1,9 +1,9 @@
 function AboutUsPage() {
   const stats = [
-    { label: "Charger Classes", value: "8", desc: "From AC to mega-fast" },
+    { label: "Charger Classes", value: "7", desc: "From AC to flagship DC fast charging" },
     { label: "Risk Tiers", value: "3", desc: "Low to High" },
     { label: "Min Ticket", value: "Rs 1.5K", desc: "Accessible entry" },
-    { label: "APY Range", value: "9.5 - 19.5%", desc: "Competitive returns" },
+    { label: "APY Range", value: "9.5 - 18%", desc: "Competitive returns" },
   ];
 
   const advisors = [
@@ -43,7 +43,7 @@ function AboutUsPage() {
     { year: "2022", title: "Founded", desc: "Zipbolt Innovations was established with a vision to democratize EV infrastructure investment." },
     { year: "2023", title: "First Deployments", desc: "Launched our first 6 kW AC and 60 kW retail charging sites across Gurugram and Delhi NCR." },
     { year: "2024", title: "Platform Launch", desc: "ZipAsset marketplace went live, enabling fractional investment in charging assets." },
-    { year: "2025", title: "Scaling", desc: "Expanded to 8 charger classes covering retail, fleet, and highway corridors nationwide." },
+    { year: "2025", title: "Scaling", desc: "Expanded to 7 charger classes covering retail, fleet, and highway corridors nationwide." },
     { year: "2026", title: "Growing Investor Base", desc: "Empowering retail and institutional investors to own revenue-generating EV infrastructure." },
   ];
 
@@ -102,8 +102,8 @@ function AboutUsPage() {
                   transparent performance data.
                 </p>
                 <p className="text-sm leading-7 text-blue-100/80">
-                  Today, ZipAsset offers eight charger classes ranging from entry-level
-                  AC installations to flagship mega-fast stations, each priced for
+                  Today, ZipAsset offers seven charger classes ranging from entry-level
+                  AC installations to flagship fast-charging stations, each priced for
                   fractional ownership with clear return profiles and defined risk
                   tiers.
                 </p>
@@ -211,7 +211,7 @@ function AboutUsPage() {
               {
                 icon: "&#9733;",
                 title: "Clear Returns",
-                desc: "APY ranges from 9.5% to 19.5% with defined lock periods, so you know what to expect before committing.",
+                desc: "APY ranges from 9.5% to 18% with defined lock periods, so you know what to expect before committing.",
               },
             ].map((item) => (
               <div

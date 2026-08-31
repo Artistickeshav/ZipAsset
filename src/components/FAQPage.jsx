@@ -20,11 +20,11 @@ function FAQPage() {
     },
     {
       q: "What is the expected return?",
-      a: "APY ranges vary by segment and asset class, from 9.5% to 19.5% depending on deployment type and risk profile. Returns depend on asset utilization, operational efficiency, market demand, and pricing conditions. Actual returns may vary based on real-world operational performance.",
+      a: "APY ranges vary by segment and asset class, from 9.5% to 18% depending on deployment type and risk profile. Returns depend on asset utilization, operational efficiency, market demand, and pricing conditions. Actual returns may vary based on real-world operational performance.",
     },
     {
       q: "What is the lock period?",
-      a: "Each asset class has a defined lock period typically ranging from 45 to 210 days depending on segment and deployment type. During the lock period, your investment is deployed and generating returns. Early withdrawal is not supported, but lock periods end on schedule.",
+      a: "Each asset class has a defined lock period typically ranging from 45 to 180 days depending on segment and deployment type. During the lock period, your investment is deployed and generating returns. Early withdrawal is not supported, but lock periods end on schedule.",
     },
     {
       q: "How do I invest?",
