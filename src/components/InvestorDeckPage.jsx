@@ -186,18 +186,18 @@ function InvestorDeckPage() {
       >
         <StatGrid stats={marketStats} />
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-[16px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200/70">
-              Network Reach
+            <div className="rounded-[16px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200/70">
+                Network Reach
+              </div>
+              <div className="mt-3 text-3xl font-black tracking-[-0.04em] text-white">
+              7 Charger Classes
+              </div>
+              <div className="mt-2 text-sm text-blue-100/70">
+              From 6 kW AC residential to 240 kW flagship charging across retail,
+              fleet, and highway locations
+              </div>
             </div>
-            <div className="mt-3 text-3xl font-black tracking-[-0.04em] text-white">
-              8 Charger Classes
-            </div>
-            <div className="mt-2 text-sm text-blue-100/70">
-              From 6 kW AC residential to 350 kW mega-fast across retail, fleet,
-              and highway locations
-            </div>
-          </div>
           <div className="rounded-[16px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200/70">
               Deployment Model
@@ -349,8 +349,8 @@ function InvestorDeckPage() {
             {
               level: "High",
               color: "rose",
-              examples: "240 kW Flagship, 350 kW Mega-Fast",
-              desc: "Next-gen infrastructure with the highest yield potential. Sensitive to EV adoption curves, grid readiness, and long-term utilization ramps.",
+              examples: "240 kW Flagship",
+              desc: "Flagship infrastructure with the highest yield potential. Sensitive to utilization assumptions, grid readiness, and site execution quality.",
             },
           ].map((risk) => (
             <div

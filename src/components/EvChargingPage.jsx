@@ -9,7 +9,7 @@ const SEGMENT = {
     "Accelerate the electric vehicle revolution by investing in fast-charging infrastructure.",
   image_url: evDcFastChargingImage,
   icon: "Zap",
-  features: ["350kW Ultra-Fast", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
+  features: ["High-Power DC Fast Charging", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
   total_tvl: 28e6,
   investors_count: 3421,
   apy_range: { min: 10, max: 18 },

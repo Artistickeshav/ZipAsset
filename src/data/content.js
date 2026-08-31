@@ -5,7 +5,6 @@ import charger60kwImage from "../assets/charger-60kw.png";
 import charger120kwImage from "../assets/charger-120kw.png";
 import charger180kwImage from "../assets/charger-180kw.png";
 import charger240kwImage from "../assets/charger-240kw.png";
-import charger350kwImage from "../assets/charger-350kw.png";
 import bessSystemImage from "../assets/bess-system.png";
 import evDcFastChargingImage from "../assets/ev-dc-fast-charging.png";
 import evPassengerFleetImage from "../assets/ev-passenger-fleet.png";
@@ -14,7 +13,7 @@ import evCargoFleetImage from "../assets/ev-cargo-fleets.png";
 export const pageTabs = ["Marketplace", "Charger Classes", "Returns", "Impact"];
 
 export const marketStats = [
-  { label: "Asset Capacity", value: "6 kW - 350 kW+ | Scalable Storage" },
+  { label: "Asset Capacity", value: "6 kW - 240 kW | Scalable Storage" },
   { label: "Coverage Areas", value: "Urban Hubs - Logistics - Long Haul Routes" },
   { label: "Investor Entry", value: "Rs 1.5K - Rs 15L+" },
 ];
@@ -90,12 +89,12 @@ export const investyzSegmentsLive = [
     image: evDcFastChargingImage,
     description:
       "Accelerate the electric vehicle revolution by investing in fast-charging infrastructure.",
-    tags: ["350kW Ultra-Fast", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
+    tags: ["High-Power DC Fast Charging", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
     details: {
       title: "Inside EV DC Fast Charging",
       subtitle:
         "High-power charging hubs are optimized for fast vehicle turnaround, energy cost savings, and intelligent demand response.",
-      features: ["350kW Ultra-Fast", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
+      features: ["High-Power DC Fast Charging", "Strategic Locations", "Smart Grid Integration", "24/7 Availability"],
       snapshot: [
         { label: "Lock Period", value: "30 days" },
         { label: "Min. Investment", value: "Rs 150" },
@@ -395,28 +394,6 @@ export const segments = [
       "Flagship deployments require strong host partnerships and consistent high-volume traffic.",
       "Larger ticket sizes increase concentration risk for smaller investors.",
       "Project performance is more sensitive to utilization assumptions and site execution quality.",
-    ],
-  },
-  {
-    id: "charger-350kw",
-    name: "350 kW Mega-Fast Charger",
-    power: "350 kW",
-    site: "Regional transit corridors and next-gen charging plazas",
-    useCase: "Future-ready highway infrastructure",
-    description:
-      "A next-generation mega-fast charger for premium locations that are preparing for the next wave of electric mobility demand.",
-    features: ["Mega-fast power delivery", "Future-ready deployment", "Designed for premium operator networks"],
-    risk: "High Risk",
-    riskLevel: "High",
-    yieldRate: 19.5,
-    lockDays: 210,
-    minAmount: 60000,
-    maxAmount: 220000,
-    image: charger350kwImage,
-    riskDrivers: [
-      "Next-generation sites depend on future EV adoption and premium corridor demand.",
-      "Ultra-high-power infrastructure carries heavier capex and maintenance complexity.",
-      "Returns are more sensitive to ramp-up timing and long-term utilization assumptions.",
     ],
   },
 ];

@@ -71,9 +71,7 @@ function App() {
   );
 
   const marketplaceSegments = useMemo(
-    () => segments.filter(
-      (segment) => segment.id !== "charger-180kw" && segment.id !== "charger-350kw",
-    ),
+    () => segments.filter((segment) => segment.id !== "charger-180kw"),
     [],
   );
 
@@ -148,7 +146,7 @@ function App() {
       <div className="app-orb app-orb-b" />
       <div className="app-orb app-orb-c" />
 
-      <Header />
+      <Header marketplaceSegments={marketplaceSegments} />
 
       {route.page === "charger" && routeSegment ? (
         <ChargerOpportunityPage
@@ -369,7 +367,7 @@ function App() {
               </div>
 
               <InvestmentCalculator
-                segments={segments}
+                segments={marketplaceSegments}
                 selectedSegmentId={selectedSegmentId}
                 investmentAmount={investmentAmount}
                 selectedSegment={selectedSegment}

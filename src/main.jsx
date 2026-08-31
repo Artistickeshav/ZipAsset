@@ -9,8 +9,8 @@ const clerkLocalization = {
   locale: "en",
   signIn: {
     start: {
-      title: "Sign in to ZiipInvest",
-      titleCombined: "Sign in to ZiipInvest",
+      title: "Sign in to ZipAsset",
+      titleCombined: "Sign in to ZipAsset",
     },
   },
 };
